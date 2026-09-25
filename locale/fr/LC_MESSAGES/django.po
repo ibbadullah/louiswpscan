@@ -1,0 +1,2031 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Louis WP Scan 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-05 19:14+0500\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\adminapp\models.py:10
+msgid "name"
+msgstr "nom"
+
+#: .\adminapp\models.py:11
+msgid "email"
+msgstr "adresse e-mail"
+
+#: .\adminapp\models.py:12
+msgid "subject"
+msgstr "objet"
+
+#: .\adminapp\models.py:13
+msgid "message"
+msgstr "message"
+
+#: .\adminapp\models.py:14
+msgid "received"
+msgstr "reçu le"
+
+#: .\adminapp\models.py:15
+msgid "handled"
+msgstr "traité"
+
+#: .\adminapp\models.py:18
+msgid "contact message"
+msgstr "message de contact"
+
+#: .\adminapp\models.py:19
+msgid "contact messages"
+msgstr "messages de contact"
+
+#: .\env\Lib\site-packages\django\utils\dates.py:30
+#: .\templates\public\privacy.html:12 .\templates\public\terms.html:12
+msgid "June"
+msgstr "juin"
+
+#: .\publicapp\forms.py:9
+msgid "Website address"
+msgstr "Adresse du site web"
+
+#: .\publicapp\forms.py:13
+msgid "example.com"
+msgstr "exemple.com"
+
+#: .\publicapp\forms.py:16 .\templates\public\home.html:27
+msgid "Website address to scan"
+msgstr "Adresse du site web à analyser"
+
+#: .\publicapp\forms.py:23 .\publicapp\views.py:90
+msgid "Please enter a valid website address."
+msgstr "Veuillez saisir une adresse de site valide."
+
+#: .\publicapp\forms.py:31 .\templates\public\contact.html:31
+msgid "Your name"
+msgstr "Votre nom"
+
+#: .\publicapp\forms.py:35 .\templates\public\contact.html:36
+msgid "Your email"
+msgstr "Votre adresse e-mail"
+
+#: .\publicapp\forms.py:39 .\templates\public\contact.html:41
+msgid "Subject"
+msgstr "Objet"
+
+#: .\publicapp\forms.py:43 .\templates\public\contact.html:46
+msgid "Message"
+msgstr "Message"
+
+#: .\publicapp\models.py:22
+msgid "scanned URL"
+msgstr "URL analysée"
+
+#: .\publicapp\models.py:23
+msgid "domain"
+msgstr "domaine"
+
+#: .\publicapp\models.py:24
+msgid "scan date"
+msgstr "date de l'analyse"
+
+#: .\publicapp\models.py:26
+msgid "is WordPress"
+msgstr "est WordPress"
+
+#: .\publicapp\models.py:27
+msgid "reachable"
+msgstr "accessible"
+
+#: .\publicapp\models.py:29
+msgid "security score"
+msgstr "note de sécurité"
+
+#: .\publicapp\models.py:30
+msgid "grade"
+msgstr "note"
+
+#: .\publicapp\models.py:32
+msgid "high issues"
+msgstr "problèmes élevés"
+
+#: .\publicapp\models.py:33
+msgid "medium issues"
+msgstr "problèmes moyens"
+
+#: .\publicapp\models.py:34
+msgid "low issues"
+msgstr "problèmes faibles"
+
+#: .\publicapp\models.py:38
+msgid "summary"
+msgstr "résumé"
+
+#: .\publicapp\models.py:41
+msgid "scan record"
+msgstr "enregistrement d'analyse"
+
+# ----- Result page -----
+#: .\publicapp\models.py:42
+msgid "scan records"
+msgstr "enregistrements d'analyse"
+
+# ----- Scanner categories -----
+#: .\publicapp\scanner.py:245
+msgid "Transport security"
+msgstr "Sécurité du transport"
+
+# ----- Scanner findings (titles) -----
+#: .\publicapp\scanner.py:250 .\publicapp\scanner.py:255
+#: .\publicapp\scanner.py:266
+msgid "HTTPS encryption"
+msgstr "Chiffrement HTTPS"
+
+#: .\publicapp\scanner.py:251
+msgid "The site is served over HTTPS and enforces it with HSTS."
+msgstr "Le site est servi en HTTPS et l'impose avec HSTS."
+
+#: .\publicapp\scanner.py:256
+msgid ""
+"The site uses HTTPS but does not send a Strict-Transport-Security header, so"
+" a first visit can still be downgraded to plain HTTP."
+msgstr ""
+"Le site utilise HTTPS mais n'envoie pas d'en-tête Strict-Transport-Security,"
+" de sorte qu'une première visite peut encore être rétrogradée vers du HTTP "
+"non chiffré."
+
+#: .\publicapp\scanner.py:259
+msgid ""
+"Add the header: Strict-Transport-Security: max-age=31536000; "
+"includeSubDomains"
+msgstr ""
+"Ajoutez l'en-tête : Strict-Transport-Security: max-age=31536000; "
+"includeSubDomains"
+
+#: .\publicapp\scanner.py:260
+msgid ""
+"On shared hosting you can add this in your .htaccess file inside an "
+"<IfModule mod_headers.c> block."
+msgstr ""
+"Sur un hébergement mutualisé, vous pouvez l'ajouter dans votre fichier "
+".htaccess à l'intérieur d'un bloc <IfModule mod_headers.c>."
+
+#: .\publicapp\scanner.py:262
+msgid ""
+"Make sure every page redirects from http:// to https:// permanently (301)."
+msgstr ""
+"Assurez-vous que chaque page redirige de http:// vers https:// de façon "
+"permanente (301)."
+
+#: .\publicapp\scanner.py:267
+msgid ""
+"The site does not enforce HTTPS. Visitor data and login passwords can be "
+"read on the network."
+msgstr ""
+"Le site n'impose pas le HTTPS. Les données des visiteurs et les mots de "
+"passe de connexion peuvent être lus sur le réseau."
+
+#: .\publicapp\scanner.py:269
+msgid ""
+"Install a free SSL certificate. Most shared hosts offer Let's Encrypt with "
+"one click in cPanel."
+msgstr ""
+"Installez un certificat SSL gratuit. La plupart des hébergeurs mutualisés "
+"proposent Let's Encrypt en un clic dans cPanel."
+
+#: .\publicapp\scanner.py:270
+msgid "Force HTTPS by adding a redirect rule in your .htaccess file."
+msgstr ""
+"Forcez le HTTPS en ajoutant une règle de redirection dans votre fichier "
+".htaccess."
+
+#: .\publicapp\scanner.py:271
+msgid ""
+"In WordPress set both the WordPress Address and Site Address to the https://"
+" version."
+msgstr ""
+"Dans WordPress, définissez l'adresse WordPress et l'adresse du site sur la "
+"version https://."
+
+#: .\publicapp\scanner.py:277
+msgid "Browser hardening"
+msgstr "Renforcement du navigateur"
+
+#: .\publicapp\scanner.py:279
+msgid "clickjacking protection"
+msgstr "protection contre le détournement de clic"
+
+#: .\publicapp\scanner.py:280
+msgid "MIME sniffing protection"
+msgstr "protection contre le reniflage MIME"
+
+#: .\publicapp\scanner.py:281
+msgid "content security policy"
+msgstr "politique de sécurité du contenu"
+
+#: .\publicapp\scanner.py:282
+msgid "referrer policy"
+msgstr "politique de référent"
+
+#: .\publicapp\scanner.py:287 .\publicapp\scanner.py:292
+msgid "Security response headers"
+msgstr "En-têtes de réponse de sécurité"
+
+#: .\publicapp\scanner.py:288
+msgid "All of the recommended browser security headers are present."
+msgstr ""
+"Tous les en-têtes de sécurité recommandés pour le navigateur sont présents."
+
+#: .\publicapp\scanner.py:293
+#, python-format
+msgid "The following protective headers are missing: %(list)s."
+msgstr "Les en-têtes de protection suivants sont manquants : %(list)s."
+
+#: .\publicapp\scanner.py:295
+msgid "Add the missing headers in your .htaccess file using mod_headers."
+msgstr ""
+"Ajoutez les en-têtes manquants dans votre fichier .htaccess à l'aide de "
+"mod_headers."
+
+#: .\publicapp\scanner.py:296
+msgid ""
+"Recommended values: X-Frame-Options: SAMEORIGIN, X-Content-Type-Options: "
+"nosniff, Referrer-Policy: strict-origin-when-cross-origin."
+msgstr ""
+"Valeurs recommandées : X-Frame-Options: SAMEORIGIN, X-Content-Type-Options: "
+"nosniff, Referrer-Policy: strict-origin-when-cross-origin."
+
+#: .\publicapp\scanner.py:298
+msgid ""
+"A security plugin such as a headers manager can also set these without "
+"editing files."
+msgstr ""
+"Une extension de sécurité de type gestionnaire d'en-têtes peut aussi les "
+"définir sans modifier de fichiers."
+
+#: .\publicapp\scanner.py:304
+msgid "DDoS and firewall"
+msgstr "DDoS et pare-feu"
+
+#: .\publicapp\scanner.py:315 .\publicapp\scanner.py:320
+msgid "DDoS protection and web firewall"
+msgstr "Protection anti-DDoS et pare-feu applicatif"
+
+#: .\publicapp\scanner.py:316
+msgid ""
+"The site appears to sit behind a content delivery network or web application"
+" firewall, which absorbs traffic floods and filters bad requests."
+msgstr ""
+"Le site semble se trouver derrière un réseau de diffusion de contenu ou un "
+"pare-feu applicatif web, qui absorbe les afflux de trafic et filtre les "
+"requêtes malveillantes."
+
+#: .\publicapp\scanner.py:321
+msgid ""
+"No content delivery network or web application firewall was detected. On "
+"shared hosting a traffic flood can take the site offline and there is no "
+"filtering layer in front of WordPress."
+msgstr ""
+"Aucun réseau de diffusion de contenu ni pare-feu applicatif web n'a été "
+"détecté. Sur un hébergement mutualisé, un afflux de trafic peut mettre le "
+"site hors ligne et aucune couche de filtrage ne protège WordPress."
+
+#: .\publicapp\scanner.py:325
+msgid ""
+"Put the site behind a free plan of a content delivery network such as "
+"Cloudflare. It is free and works on shared hosting by only changing your "
+"DNS."
+msgstr ""
+"Placez le site derrière l'offre gratuite d'un réseau de diffusion de contenu"
+" tel que Cloudflare. C'est gratuit et cela fonctionne sur un hébergement "
+"mutualisé en modifiant seulement votre DNS."
+
+#: .\publicapp\scanner.py:327
+msgid "Enable the firewall and bot fight features once the DNS is proxied."
+msgstr ""
+"Activez le pare-feu et les fonctions de lutte contre les robots une fois le "
+"DNS mis en proxy."
+
+#: .\publicapp\scanner.py:328
+msgid "Turn on rate limiting for the login and XML-RPC endpoints."
+msgstr ""
+"Activez la limitation du débit pour les points d'accès de connexion et XML-"
+"RPC."
+
+#: .\publicapp\scanner.py:334 .\publicapp\scanner.py:494
+#: .\publicapp\scanner.py:518 .\publicapp\scanner.py:538
+msgid "Information disclosure"
+msgstr "Divulgation d'informations"
+
+#: .\publicapp\scanner.py:342
+msgid "an unknown version"
+msgstr "une version inconnue"
+
+#: .\publicapp\scanner.py:344 .\publicapp\scanner.py:354
+msgid "WordPress version disclosure"
+msgstr "Divulgation de la version de WordPress"
+
+#: .\publicapp\scanner.py:345
+#, python-format
+msgid ""
+"The site reveals its WordPress version (%(v)s). Attackers use the version "
+"number to look up matching exploits."
+msgstr ""
+"Le site révèle sa version de WordPress (%(v)s). Les attaquants utilisent le "
+"numéro de version pour rechercher les exploits correspondants."
+
+#: .\publicapp\scanner.py:348
+msgid ""
+"Remove the version meta tag. Many security plugins do this automatically."
+msgstr ""
+"Supprimez la balise meta de version. De nombreuses extensions de sécurité le"
+" font automatiquement."
+
+#: .\publicapp\scanner.py:349
+msgid "Delete or block public access to readme.html and license.txt."
+msgstr "Supprimez ou bloquez l'accès public à readme.html et license.txt."
+
+#: .\publicapp\scanner.py:350
+msgid ""
+"Most important of all: keep WordPress, themes and plugins fully up to date."
+msgstr ""
+"Le plus important de tout : maintenez WordPress, les thèmes et les "
+"extensions entièrement à jour."
+
+#: .\publicapp\scanner.py:355
+msgid "The WordPress version is not openly advertised."
+msgstr "La version de WordPress n'est pas affichée ouvertement."
+
+#: .\publicapp\scanner.py:360
+msgid "Brute force and DDoS"
+msgstr "Force brute et DDoS"
+
+#: .\publicapp\scanner.py:368
+msgid "XML-RPC interface enabled"
+msgstr "Interface XML-RPC activée"
+
+#: .\publicapp\scanner.py:369
+msgid ""
+"xmlrpc.php is active. This single file lets an attacker try hundreds of "
+"passwords in one request (system.multicall) and can be abused to attack "
+"other websites (pingback flooding)."
+msgstr ""
+"xmlrpc.php est actif. Ce simple fichier permet à un attaquant d'essayer des "
+"centaines de mots de passe en une seule requête (system.multicall) et peut "
+"être détourné pour attaquer d'autres sites (inondation par pingback)."
+
+#: .\publicapp\scanner.py:373
+msgid ""
+"If you do not use the Jetpack or the mobile app, disable XML-RPC completely "
+"with a security plugin or by blocking the file in .htaccess."
+msgstr ""
+"Si vous n'utilisez ni Jetpack ni l'application mobile, désactivez "
+"complètement XML-RPC avec une extension de sécurité ou en bloquant le "
+"fichier dans .htaccess."
+
+#: .\publicapp\scanner.py:375
+msgid "To block it, deny access to xmlrpc.php in your .htaccess file."
+msgstr ""
+"Pour le bloquer, refusez l'accès à xmlrpc.php dans votre fichier .htaccess."
+
+#: .\publicapp\scanner.py:376
+msgid ""
+"If you need it, at least disable pingbacks and add login rate limiting."
+msgstr ""
+"Si vous en avez besoin, désactivez au moins les pingbacks et ajoutez une "
+"limitation du débit de connexion."
+
+#: .\publicapp\scanner.py:380
+msgid "XML-RPC interface"
+msgstr "Interface XML-RPC"
+
+#: .\publicapp\scanner.py:381
+msgid "The XML-RPC interface is disabled or blocked."
+msgstr "L'interface XML-RPC est désactivée ou bloquée."
+
+#: .\publicapp\scanner.py:386 .\publicapp\scanner.py:446
+msgid "Brute force protection"
+msgstr "Protection contre la force brute"
+
+#: .\publicapp\scanner.py:394
+msgid "Login page openly reachable"
+msgstr "Page de connexion librement accessible"
+
+#: .\publicapp\scanner.py:395
+msgid ""
+"The default login page wp-login.php is reachable by anyone with no extra "
+"protection in front of it. This is the main door attackers knock on to guess"
+" passwords."
+msgstr ""
+"La page de connexion par défaut wp-login.php est accessible à tous sans "
+"protection supplémentaire devant elle. C'est la porte principale à laquelle "
+"frappent les attaquants pour deviner les mots de passe."
+
+#: .\publicapp\scanner.py:399
+msgid ""
+"Install a login security plugin that limits failed attempts and locks out "
+"repeat offenders."
+msgstr ""
+"Installez une extension de sécurité de connexion qui limite les tentatives "
+"échouées et bloque les récidivistes."
+
+#: .\publicapp\scanner.py:401
+msgid "Enable two factor authentication for every administrator account."
+msgstr ""
+"Activez l'authentification à deux facteurs pour chaque compte "
+"administrateur."
+
+#: .\publicapp\scanner.py:402
+msgid ""
+"Protect the login page with a server password (HTTP basic auth) through "
+"cPanel directory privacy, or change the login URL."
+msgstr ""
+"Protégez la page de connexion avec un mot de passe serveur (authentification"
+" HTTP basique) via la confidentialité des répertoires de cPanel, ou modifiez"
+" l'URL de connexion."
+
+#: .\publicapp\scanner.py:404
+msgid "Never use the username admin and always use a long unique password."
+msgstr ""
+"N'utilisez jamais le nom d'utilisateur admin et utilisez toujours un mot de "
+"passe long et unique."
+
+#: .\publicapp\scanner.py:408
+msgid "Login page protection"
+msgstr "Protection de la page de connexion"
+
+#: .\publicapp\scanner.py:409
+msgid "The default login page is not openly reachable or is protected."
+msgstr ""
+"La page de connexion par défaut n'est pas librement accessible ou est "
+"protégée."
+
+#: .\publicapp\scanner.py:414
+msgid "Default URLs"
+msgstr "URL par défaut"
+
+#: .\publicapp\scanner.py:419 .\publicapp\scanner.py:440
+msgid "Default admin URL"
+msgstr "URL d'administration par défaut"
+
+#: .\publicapp\scanner.py:420
+msgid "The default admin area did not respond."
+msgstr "La zone d'administration par défaut n'a pas répondu."
+
+#: .\publicapp\scanner.py:428
+msgid "Default admin URL reachable"
+msgstr "URL d'administration par défaut accessible"
+
+#: .\publicapp\scanner.py:429
+msgid ""
+"The default WordPress admin address /wp-admin/ is reachable. Attackers know "
+"this address by heart and point their password guessing tools straight at "
+"it."
+msgstr ""
+"L'adresse d'administration par défaut de WordPress /wp-admin/ est "
+"accessible. Les attaquants connaissent cette adresse par cœur et y dirigent "
+"directement leurs outils de devinette de mots de passe."
+
+#: .\publicapp\scanner.py:432
+msgid ""
+"Protect the wp-admin folder with an extra server password using cPanel "
+"directory privacy."
+msgstr ""
+"Protégez le dossier wp-admin avec un mot de passe serveur supplémentaire via"
+" la confidentialité des répertoires de cPanel."
+
+#: .\publicapp\scanner.py:433
+msgid ""
+"If you always connect from the same place, allow only your own IP address to"
+" reach /wp-admin/ in your .htaccess file."
+msgstr ""
+"Si vous vous connectez toujours depuis le même endroit, autorisez uniquement"
+" votre propre adresse IP à accéder à /wp-admin/ dans votre fichier "
+".htaccess."
+
+#: .\publicapp\scanner.py:435
+msgid ""
+"Use a security plugin to change the login and admin address to something "
+"only you know."
+msgstr ""
+"Utilisez une extension de sécurité pour remplacer l'adresse de connexion et "
+"d'administration par une adresse connue de vous seul."
+
+#: .\publicapp\scanner.py:436
+msgid ""
+"Always pair this with two factor authentication and a login attempt limiter."
+msgstr ""
+"Associez toujours cela à l'authentification à deux facteurs et à un limiteur"
+" de tentatives de connexion."
+
+#: .\publicapp\scanner.py:441
+msgid "The default admin address is not openly reachable."
+msgstr "L'adresse d'administration par défaut n'est pas librement accessible."
+
+#: .\publicapp\scanner.py:476
+msgid "Default or common admin username"
+msgstr "Nom d'administrateur par défaut ou courant"
+
+#: .\publicapp\scanner.py:477
+#, python-format
+msgid ""
+"The site uses a well known username (%(list)s). Half of a brute force attack"
+" is already solved when the username is easy to guess."
+msgstr ""
+"Le site utilise un nom d'utilisateur bien connu (%(list)s). La moitié d'une "
+"attaque par force brute est déjà résolue lorsque le nom d'utilisateur est "
+"facile à deviner."
+
+#: .\publicapp\scanner.py:480
+msgid ""
+"Create a brand new administrator account with a unique username that is not "
+"a real word."
+msgstr ""
+"Créez un tout nouveau compte administrateur avec un nom d'utilisateur unique"
+" qui n'est pas un vrai mot."
+
+#: .\publicapp\scanner.py:481
+msgid ""
+"Log in with the new account, then delete the old default account and "
+"reassign its content to the new one."
+msgstr ""
+"Connectez-vous avec le nouveau compte, puis supprimez l'ancien compte par "
+"défaut et réattribuez son contenu au nouveau."
+
+#: .\publicapp\scanner.py:483
+msgid "Never use admin, administrator or your domain name as a login name."
+msgstr ""
+"N'utilisez jamais admin, administrator ou le nom de votre domaine comme nom "
+"de connexion."
+
+#: .\publicapp\scanner.py:484
+msgid ""
+"Add two factor authentication and a plugin that limits failed login "
+"attempts."
+msgstr ""
+"Ajoutez l'authentification à deux facteurs et une extension qui limite les "
+"tentatives de connexion échouées."
+
+#: .\publicapp\scanner.py:488
+msgid "Default username check"
+msgstr "Vérification des noms d'utilisateur par défaut"
+
+#: .\publicapp\scanner.py:489
+msgid "No common default usernames were visible from public data."
+msgstr ""
+"Aucun nom d'utilisateur par défaut courant n'était visible dans les données "
+"publiques."
+
+#: .\publicapp\scanner.py:501
+msgid "Username enumeration possible"
+msgstr "Énumération des identifiants possible"
+
+#: .\publicapp\scanner.py:502
+msgid ""
+"The list of author usernames can be read through the REST API or the author "
+"page redirect. Knowing real usernames makes password guessing much easier."
+msgstr ""
+"La liste des noms d'utilisateur des auteurs peut être lue via l'API REST ou "
+"la redirection de la page auteur. Connaître les vrais noms d'utilisateur "
+"rend la devinette des mots de passe bien plus facile."
+
+#: .\publicapp\scanner.py:505
+msgid ""
+"Block the wp-json/wp/v2/users endpoint for visitors who are not logged in. "
+"Many security plugins offer a single switch for this."
+msgstr ""
+"Bloquez le point d'accès wp-json/wp/v2/users pour les visiteurs non "
+"connectés. De nombreuses extensions de sécurité proposent une simple option "
+"pour cela."
+
+#: .\publicapp\scanner.py:507
+msgid "Stop the ?author= redirect so it no longer reveals the login name."
+msgstr ""
+"Empêchez la redirection ?author= afin qu'elle ne révèle plus le nom de "
+"connexion."
+
+#: .\publicapp\scanner.py:508
+msgid "Use display names that are different from the login names."
+msgstr "Utilisez des noms d'affichage différents des noms de connexion."
+
+#: .\publicapp\scanner.py:512
+msgid "Username enumeration"
+msgstr "Énumération des identifiants"
+
+#: .\publicapp\scanner.py:513
+msgid "Author usernames are not exposed through the common channels."
+msgstr ""
+"Les noms d'utilisateur des auteurs ne sont pas exposés par les canaux "
+"courants."
+
+#: .\publicapp\scanner.py:523
+msgid "Directory listing enabled"
+msgstr "Listage des répertoires activé"
+
+#: .\publicapp\scanner.py:524
+msgid ""
+"The uploads folder shows a public file index. Visitors can browse every "
+"uploaded file, including files you did not link anywhere."
+msgstr ""
+"Le dossier des téléversements affiche un index public des fichiers. Les "
+"visiteurs peuvent parcourir chaque fichier téléversé, y compris ceux que "
+"vous n'avez liés nulle part."
+
+#: .\publicapp\scanner.py:527
+msgid ""
+"Disable directory browsing by adding Options -Indexes to your .htaccess "
+"file."
+msgstr ""
+"Désactivez la navigation dans les répertoires en ajoutant Options -Indexes à"
+" votre fichier .htaccess."
+
+#: .\publicapp\scanner.py:528
+msgid ""
+"Place an empty index.html file inside folders that should not be browsed."
+msgstr ""
+"Placez un fichier index.html vide dans les dossiers qui ne doivent pas être "
+"parcourus."
+
+#: .\publicapp\scanner.py:532
+msgid "Directory listing"
+msgstr "Listage des répertoires"
+
+#: .\publicapp\scanner.py:533
+msgid "Directory browsing is turned off."
+msgstr "La navigation dans les répertoires est désactivée."
+
+#: .\publicapp\scanner.py:545
+msgid "Public debug log file"
+msgstr "Fichier de journal de débogage public"
+
+#: .\publicapp\scanner.py:546
+msgid ""
+"A public debug.log file was found. These files often leak server paths, "
+"database errors and sometimes secrets."
+msgstr ""
+"Un fichier debug.log public a été trouvé. Ces fichiers laissent souvent "
+"fuiter des chemins serveur, des erreurs de base de données et parfois des "
+"secrets."
+
+#: .\publicapp\scanner.py:549
+msgid "Turn off WP_DEBUG_LOG on the live site by editing wp-config.php."
+msgstr ""
+"Désactivez WP_DEBUG_LOG sur le site en production en modifiant wp-"
+"config.php."
+
+#: .\publicapp\scanner.py:550
+msgid "Delete the existing wp-content/debug.log file."
+msgstr "Supprimez le fichier wp-content/debug.log existant."
+
+#: .\publicapp\scanner.py:551
+msgid "Block access to any .log file in your .htaccess."
+msgstr "Bloquez l'accès à tout fichier .log dans votre .htaccess."
+
+#: .\publicapp\scanner.py:555
+msgid "Debug log exposure"
+msgstr "Exposition du journal de débogage"
+
+#: .\publicapp\scanner.py:556
+msgid "No public debug log file was found."
+msgstr "Aucun fichier de journal de débogage public n'a été trouvé."
+
+#: .\publicapp\scanner.py:561
+msgid "Default files"
+msgstr "Fichiers par défaut"
+
+#: .\publicapp\scanner.py:569
+msgid "Default WordPress files present"
+msgstr "Fichiers WordPress par défaut présents"
+
+#: .\publicapp\scanner.py:570
+#, python-format
+msgid ""
+"Default install files are still reachable: %(list)s. They are harmless on "
+"their own but they confirm the site runs WordPress and can hint at the "
+"version."
+msgstr ""
+"Des fichiers d'installation par défaut sont encore accessibles : %(list)s. "
+"Ils sont inoffensifs en eux-mêmes mais confirment que le site fonctionne "
+"sous WordPress et peuvent indiquer la version."
+
+#: .\publicapp\scanner.py:574
+msgid "Delete files you do not need, such as license.txt and readme.html."
+msgstr ""
+"Supprimez les fichiers dont vous n'avez pas besoin, tels que license.txt et "
+"readme.html."
+
+#: .\publicapp\scanner.py:575
+msgid "Block public access to wp-config-sample.php and other sample files."
+msgstr ""
+"Bloquez l'accès public à wp-config-sample.php et aux autres fichiers "
+"d'exemple."
+
+#: .\publicapp\scanner.py:579
+msgid "Default WordPress files"
+msgstr "Fichiers WordPress par défaut"
+
+#: .\publicapp\scanner.py:580
+msgid "No unnecessary default files were exposed."
+msgstr "Aucun fichier par défaut inutile n'a été exposé."
+
+#: .\publicapp\views.py:77
+#, python-format
+msgid ""
+"You have used your 3 free scans. Please come back in about %(hours)s hours "
+"to scan more. This limit keeps our non profit service available to everyone."
+msgstr ""
+"Vous avez utilisé vos 3 analyses gratuites. Revenez dans environ %(hours)s "
+"heures pour en faire d'autres. Cette limite permet de garder notre service à"
+" but non lucratif accessible à tous."
+
+#: .\publicapp\views.py:99
+msgid "That address could not be read."
+msgstr "Cette adresse n'a pas pu être lue."
+
+#: .\templates\adminapp\dashboard.html:4 .\templates\adminapp\dashboard.html:9
+msgid "Team dashboard"
+msgstr "Tableau de bord de l'équipe"
+
+#: .\templates\adminapp\dashboard.html:10
+msgid "Overview of scans and messages"
+msgstr "Aperçu des analyses et des messages"
+
+#: .\templates\adminapp\dashboard.html:20
+msgid "Total scans"
+msgstr "Analyses totales"
+
+#: .\templates\adminapp\dashboard.html:26
+msgid "Last 30 days"
+msgstr "30 derniers jours"
+
+#: .\templates\adminapp\dashboard.html:32
+msgid "Average score"
+msgstr "Note moyenne"
+
+#: .\templates\adminapp\dashboard.html:38
+msgid "Open messages"
+msgstr "Messages ouverts"
+
+#: .\templates\adminapp\dashboard.html:46
+msgid "Latest scans"
+msgstr "Dernières analyses"
+
+#: .\templates\adminapp\dashboard.html:51
+msgid "Domain"
+msgstr "Domaine"
+
+#: .\templates\adminapp\dashboard.html:52
+msgid "Grade"
+msgstr "Note"
+
+#: .\templates\adminapp\dashboard.html:53
+msgid "Issues"
+msgstr "Problèmes"
+
+#: .\templates\adminapp\dashboard.html:54
+msgid "Date"
+msgstr "Date"
+
+#: .\templates\adminapp\dashboard.html:66
+msgid "No scans yet."
+msgstr "Aucune analyse pour l'instant."
+
+#: .\templates\adminapp\dashboard.html:76
+msgid "Latest messages"
+msgstr "Derniers messages"
+
+#: .\templates\adminapp\dashboard.html:82
+msgid "New"
+msgstr "Nouveau"
+
+#: .\templates\adminapp\dashboard.html:87
+msgid "No messages yet."
+msgstr "Aucun message pour l'instant."
+
+#: .\templates\adminapp\dashboard.html:92
+msgid "Open Django admin"
+msgstr "Ouvrir l'administration Django"
+
+#: .\templates\base.html:8
+msgid ""
+"Louis WP Scan is a free non profit service that checks WordPress websites "
+"for common security weaknesses and shows you how to fix them."
+msgstr ""
+"Louis WP Scan est un service gratuit à but non lucratif qui vérifie les "
+"sites WordPress à la recherche des failles de sécurité courantes et vous "
+"montre comment les corriger."
+
+#: .\templates\partials\cookie_banner.html:6
+msgid "Cookie consent"
+msgstr "Consentement aux cookies"
+
+# ----- Cookie banner -----
+#: .\templates\partials\cookie_banner.html:10
+msgid "We value your privacy"
+msgstr "Nous respectons votre vie privée"
+
+#: .\templates\partials\cookie_banner.html:12
+msgid ""
+"We use only the cookies needed to run this site. With your permission we "
+"also use Google Analytics to understand how visitors use the service so we "
+"can improve it. You can change your choice at any time."
+msgstr ""
+"Nous utilisons uniquement les cookies nécessaires au fonctionnement du site."
+" Avec votre accord, nous utilisons aussi Google Analytics pour comprendre "
+"comment le service est utilisé et l'améliorer. Vous pouvez modifier votre "
+"choix à tout moment."
+
+#: .\templates\partials\cookie_banner.html:13
+msgid "Read our privacy policy"
+msgstr "Lire notre politique de confidentialité"
+
+#: .\templates\partials\cookie_banner.html:18
+msgid "Reject analytics"
+msgstr "Refuser les statistiques"
+
+#: .\templates\partials\cookie_banner.html:21
+msgid "Accept all"
+msgstr "Tout accepter"
+
+#: .\templates\partials\footer.html:11
+msgid ""
+"A non profit project that helps small businesses and everyday people keep "
+"their WordPress websites safe from hacking and data misuse."
+msgstr ""
+"Un projet à but non lucratif qui aide les petites entreprises et les "
+"particuliers à protéger leurs sites WordPress contre le piratage et l'usage "
+"abusif des données."
+
+#: .\templates\partials\footer.html:14
+msgid ""
+"Named in tribute to Louis de Broglie, the physicist whose work helped make "
+"modern computing possible."
+msgstr ""
+"Nommé en hommage à Louis de Broglie, le physicien dont les travaux ont "
+"contribué à rendre possible l'informatique moderne."
+
+# ----- Footer -----
+#: .\templates\partials\footer.html:19
+msgid "Explore"
+msgstr "Explorer"
+
+# ----- Navigation -----
+#: .\templates\partials\footer.html:21 .\templates\partials\navbar.html:17
+msgid "Home"
+msgstr "Accueil"
+
+#: .\templates\partials\footer.html:22 .\templates\public\about.html:4
+#: .\templates\public\about.html:10
+msgid "About us"
+msgstr "À propos"
+
+#: .\templates\partials\footer.html:23
+#: .\templates\public\founding_story.html:10
+msgid "Our story"
+msgstr "Notre histoire"
+
+#: .\templates\partials\footer.html:24 .\templates\public\contact.html:4
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: .\templates\partials\footer.html:29 .\templates\public\terms.html:10
+msgid "Legal"
+msgstr "Mentions légales"
+
+#: .\templates\partials\footer.html:31 .\templates\public\privacy.html:4
+#: .\templates\public\privacy.html:11
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+#: .\templates\partials\footer.html:32 .\templates\public\terms.html:4
+#: .\templates\public\terms.html:11
+msgid "Terms and conditions"
+msgstr "Conditions générales"
+
+#: .\templates\partials\footer.html:33
+msgid "Cookie settings"
+msgstr "Paramètres des cookies"
+
+#: .\templates\partials\footer.html:38 .\templates\public\about.html:36
+#: .\templates\public\home.html:107
+msgid "Our mission"
+msgstr "Notre mission"
+
+#: .\templates\partials\footer.html:40
+msgid ""
+"Security knowledge should not be a luxury. We give it away for free so that "
+"no one loses their website, their work, or their customers data to a "
+"preventable attack."
+msgstr ""
+"Le savoir en matière de sécurité ne devrait pas être un luxe. Nous l'offrons"
+" gratuitement afin que personne ne perde son site, son travail ou les "
+"données de ses clients à cause d'une attaque évitable."
+
+#: .\templates\partials\footer.html:48
+msgid "A non profit initiative."
+msgstr "Une initiative à but non lucratif."
+
+#: .\templates\partials\footer.html:51
+msgid "Made with care for a safer web."
+msgstr "Réalisé avec soin pour un web plus sûr."
+
+#: .\templates\partials\navbar.html:11
+msgid "Toggle navigation"
+msgstr "Afficher la navigation"
+
+#: .\templates\partials\navbar.html:18
+msgid "About"
+msgstr "À propos"
+
+#: .\templates\partials\navbar.html:19
+#: .\templates\public\founding_story.html:4
+msgid "Our Story"
+msgstr "Notre histoire"
+
+#: .\templates\partials\navbar.html:20 .\templates\public\contact.html:10
+msgid "Contact"
+msgstr "Contact"
+
+#: .\templates\partials\navbar.html:48
+msgid "Scan a site"
+msgstr "Analyser un site"
+
+#: .\templates\public\about.html:5
+msgid ""
+"Louis WP Scan is a free non profit WordPress security scanner with a mission"
+" to protect small businesses and people from preventable attacks."
+msgstr ""
+"Louis WP Scan est un scanner de sécurité WordPress gratuit et à but non "
+"lucratif, avec pour mission de protéger les petites entreprises et les "
+"particuliers contre les attaques évitables."
+
+# ----- About page -----
+#: .\templates\public\about.html:11
+msgid "Protecting the small web"
+msgstr "Protéger le petit web"
+
+#: .\templates\public\about.html:12
+msgid ""
+"A non profit effort to keep WordPress websites and the people behind them "
+"safe."
+msgstr ""
+"Un effort à but non lucratif pour protéger les sites WordPress et les "
+"personnes qui les font vivre."
+
+#: .\templates\public\about.html:20
+msgid "Who we are"
+msgstr "Qui sommes-nous"
+
+#: .\templates\public\about.html:21
+msgid ""
+"Louis WP Scan is a non profit project created after one too many small "
+"websites were lost to attacks that were entirely preventable. WordPress "
+"powers a huge part of the web, from family blogs to local shops and "
+"charities. Many of these sites are run by people who are experts in their "
+"own field but were never meant to become security specialists."
+msgstr ""
+"Louis WP Scan est un projet à but non lucratif né après la perte de trop de "
+"petits sites à cause d'attaques entièrement évitables. WordPress propulse "
+"une grande partie du web, des blogs familiaux aux commerces locaux et aux "
+"associations. Beaucoup de ces sites sont gérés par des personnes expertes "
+"dans leur domaine mais qui n'ont jamais eu vocation à devenir spécialistes "
+"de la sécurité."
+
+#: .\templates\public\about.html:22
+msgid ""
+"We exist to close that gap. We turn the technical checks a security "
+"professional would run into a simple, friendly report that anyone can act "
+"on."
+msgstr ""
+"Nous existons pour combler cet écart. Nous transformons les vérifications "
+"techniques qu'effectuerait un professionnel de la sécurité en un rapport "
+"simple et accessible sur lequel chacun peut agir."
+
+#: .\templates\public\about.html:24
+msgid "What makes us different"
+msgstr "Ce qui nous distingue"
+
+#: .\templates\public\about.html:26
+msgid "Completely free, with no hidden paid tier"
+msgstr "Entièrement gratuit, sans offre payante cachée"
+
+#: .\templates\public\about.html:27
+msgid "We respect your privacy and store as little as possible"
+msgstr ""
+"Nous respectons votre vie privée et stockons le moins de données possible"
+
+#: .\templates\public\about.html:28
+msgid "Plain language fixes, not confusing jargon"
+msgstr "Des corrections en langage clair, sans jargon déroutant"
+
+#: .\templates\public\about.html:29
+msgid "Safe, read only checks that never touch your content"
+msgstr ""
+"Des vérifications sûres, en lecture seule, qui ne touchent jamais à votre "
+"contenu"
+
+#: .\templates\public\about.html:30
+msgid "Available in English and French"
+msgstr "Disponible en anglais et en français"
+
+#: .\templates\public\about.html:37
+msgid ""
+"To protect small businesses and everyday people from hacking and the illegal"
+" use of their data, by making practical security knowledge free for "
+"everyone."
+msgstr ""
+"Protéger les petites entreprises et les particuliers contre le piratage et "
+"l'usage illégal de leurs données, en rendant le savoir pratique en matière "
+"de sécurité gratuit pour tous."
+
+#: .\templates\public\about.html:41
+msgid "Our vision"
+msgstr "Notre vision"
+
+#: .\templates\public\about.html:42
+msgid ""
+"A web where a small website is not an easy target, and where good security "
+"is something everyone can reach."
+msgstr ""
+"Un web où un petit site n'est pas une cible facile et où une bonne sécurité "
+"est à la portée de tous."
+
+#: .\templates\public\about.html:48
+msgid "Curious where the name comes from?"
+msgstr "Curieux de savoir d'où vient le nom ?"
+
+#: .\templates\public\about.html:50
+msgid "Read our founding story"
+msgstr "Lire notre histoire fondatrice"
+
+#: .\templates\public\contact.html:5
+msgid ""
+"Get in touch with the Louis WP Scan team. We are happy to help with "
+"questions about your scan result."
+msgstr ""
+"Contactez l'équipe de Louis WP Scan. Nous sommes heureux de vous aider pour "
+"toute question sur votre résultat d'analyse."
+
+# ----- Contact -----
+#: .\templates\public\contact.html:11
+msgid "Get in touch"
+msgstr "Prenez contact"
+
+#: .\templates\public\contact.html:12
+msgid "Questions, feedback, or a suggestion? We would love to hear from you."
+msgstr ""
+"Une question, un retour ou une suggestion ? Nous serions ravis de vous lire."
+
+#: .\templates\public\contact.html:22
+msgid "Send us a message"
+msgstr "Envoyez-nous un message"
+
+#: .\templates\public\contact.html:52
+msgid "Send message"
+msgstr "Envoyer le message"
+
+#: .\templates\public\contact.html:61
+msgid "Other ways to reach us"
+msgstr "Autres moyens de nous joindre"
+
+#: .\templates\public\contact.html:65
+msgid "Email"
+msgstr "E-mail"
+
+#: .\templates\public\contact.html:72
+msgid "Website"
+msgstr "Site web"
+
+#: .\templates\public\contact.html:79
+msgid "Non profit"
+msgstr "À but non lucratif"
+
+#: .\templates\public\contact.html:80
+msgid "We do this to help, not for profit."
+msgstr "Nous faisons cela pour aider, pas pour le profit."
+
+#: .\templates\public\contact.html:84
+msgid ""
+"We usually reply within a few days. Please remember we are a small non "
+"profit effort."
+msgstr ""
+"Nous répondons généralement en quelques jours. N'oubliez pas que nous sommes"
+" une petite initiative à but non lucratif."
+
+#: .\templates\public\contact_done.html:4
+msgid "Thank you"
+msgstr "Merci"
+
+#: .\templates\public\contact_done.html:12
+msgid "Thank you for reaching out"
+msgstr "Merci de nous avoir contactés"
+
+#: .\templates\public\contact_done.html:13
+msgid ""
+"Your message has been received. We will get back to you as soon as we can."
+msgstr "Votre message a bien été reçu. Nous vous répondrons dès que possible."
+
+#: .\templates\public\contact_done.html:15
+msgid "Back to home"
+msgstr "Retour à l'accueil"
+
+#: .\templates\public\founding_story.html:5
+msgid ""
+"Why Louis WP Scan exists, and the story of the man it is named after: the "
+"physicist Louis de Broglie."
+msgstr ""
+"Pourquoi Louis WP Scan existe, et l'histoire de l'homme dont il porte le nom"
+" : le physicien Louis de Broglie."
+
+# ----- Founding story -----
+#: .\templates\public\founding_story.html:11
+msgid "Why Louis WP Scan exists"
+msgstr "Pourquoi Louis WP Scan existe"
+
+#: .\templates\public\founding_story.html:12
+msgid ""
+"A small project born from a hard lesson, and named after a man who changed "
+"the world."
+msgstr ""
+"Un petit projet né d'une dure leçon, et nommé d'après un homme qui a changé "
+"le monde."
+
+#: .\templates\public\founding_story.html:21
+msgid "It started with a hacked website"
+msgstr "Tout a commencé par un site piraté"
+
+#: .\templates\public\founding_story.html:22
+msgid ""
+"One of my own WordPress websites was hacked. If you have ever been through "
+"it, you know the feeling. The work of months or years can be damaged in a "
+"single night. There is the stress, the cleanup, the worry about what "
+"happened to the data, and the helpless feeling of not knowing how it was "
+"even possible."
+msgstr ""
+"L'un de mes propres sites WordPress a été piraté. Si vous l'avez déjà vécu, "
+"vous connaissez ce sentiment. Le travail de plusieurs mois ou années peut "
+"être détruit en une seule nuit. Il y a le stress, le nettoyage, l'inquiétude"
+" sur le sort des données et ce sentiment d'impuissance de ne pas savoir "
+"comment cela a pu arriver."
+
+#: .\templates\public\founding_story.html:23
+msgid ""
+"After I recovered the site, I made a decision. Instead of only protecting my"
+" own corner of the web, I wanted to help other people avoid the same painful"
+" experience. So I built this free, non profit service. It scans WordPress "
+"websites, finds the common weaknesses that attackers exploit, and explains "
+"in plain language how to fix them."
+msgstr ""
+"Après avoir récupéré le site, j'ai pris une décision. Plutôt que de protéger"
+" uniquement mon propre coin du web, je voulais aider d'autres personnes à "
+"éviter la même expérience douloureuse. J'ai donc créé ce service gratuit et "
+"à but non lucratif. Il analyse les sites WordPress, trouve les failles "
+"courantes exploitées par les attaquants et explique en langage clair comment"
+" les corriger."
+
+#: .\templates\public\founding_story.html:27
+msgid ""
+"No one should lose their website, their work, or their customers data to an "
+"attack that could have been prevented."
+msgstr ""
+"Personne ne devrait perdre son site, son travail ou les données de ses "
+"clients à cause d'une attaque qui aurait pu être évitée."
+
+#: .\templates\public\founding_story.html:33
+msgid "Founder of Louis WP Scan"
+msgstr "Fondateur de Louis WP Scan"
+
+#: .\templates\public\founding_story.html:38
+msgid "Ibbad Ullah"
+msgstr "Ibbad Ullah"
+
+#: .\templates\public\founding_story.html:39
+msgid "Founder and developer, Louis WP Scan"
+msgstr "Fondateur et développeur, Louis WP Scan"
+
+#: .\templates\public\founding_story.html:40
+msgid ""
+"I built this service after living through a website hack myself, so that "
+"other people would not have to face the same loss alone."
+msgstr ""
+"J'ai créé ce service après avoir moi-même vécu le piratage d'un site, afin "
+"que d'autres n'aient pas à affronter seuls la même perte."
+
+#: .\templates\public\founding_story.html:44
+msgid "Why the name Louis"
+msgstr "Pourquoi le nom Louis"
+
+#: .\templates\public\founding_story.html:45
+msgid ""
+"This project carries the name Louis as a tribute to Louis de Broglie, the "
+"French physicist who won the Nobel Prize in Physics in 1929. I have a deep "
+"admiration for this man, and I wanted his name to live on in something that "
+"helps people."
+msgstr ""
+"Ce projet porte le nom de Louis en hommage à Louis de Broglie, le physicien "
+"français qui a reçu le prix Nobel de physique en 1929. J'éprouve une "
+"profonde admiration pour cet homme, et je voulais que son nom perdure dans "
+"quelque chose qui aide les gens."
+
+#: .\templates\public\founding_story.html:46
+msgid ""
+"Louis de Broglie played a foundational role in the science that eventually "
+"made modern electronics possible. His idea that matter behaves as a wave "
+"became one of the key building blocks of quantum mechanics. That "
+"understanding later made it possible to create the technologies our entire "
+"digital world now rests on: transistors, semiconductors, lasers, and "
+"microchips."
+msgstr ""
+"Louis de Broglie a joué un rôle fondateur dans la science qui a finalement "
+"rendu possible l'électronique moderne. Son idée selon laquelle la matière se"
+" comporte comme une onde est devenue l'un des piliers de la mécanique "
+"quantique. Cette compréhension a ensuite permis de créer les technologies "
+"sur lesquelles repose aujourd'hui tout notre monde numérique : transistors, "
+"semi-conducteurs, lasers et micropuces."
+
+#: .\templates\public\founding_story.html:47
+msgid ""
+"Put simply, every computer, every phone, and every website, including the "
+"very one you are protecting right now, stands on the foundation that "
+"thinkers like him helped to build. When you run a scan here, you are using a"
+" chain of technology that traces all the way back to his work. Naming this "
+"service after him is my small way of saying thank you."
+msgstr ""
+"En clair, chaque ordinateur, chaque téléphone et chaque site web, y compris "
+"celui que vous protégez en ce moment même, repose sur les fondations que des"
+" penseurs comme lui ont contribué à bâtir. Lorsque vous lancez une analyse "
+"ici, vous utilisez une chaîne de technologies qui remonte jusqu'à ses "
+"travaux. Donner son nom à ce service est ma petite façon de dire merci."
+
+#: .\templates\public\founding_story.html:55
+msgid "Louis de Broglie"
+msgstr "Louis de Broglie"
+
+#: .\templates\public\founding_story.html:56
+msgid "Nobel Prize in Physics, 1929"
+msgstr "Prix Nobel de physique, 1929"
+
+#: .\templates\public\founding_story.html:57
+msgid ""
+"A pioneer of quantum mechanics whose work underpins the transistors, "
+"semiconductors and microchips behind all modern computing."
+msgstr ""
+"Un pionnier de la mécanique quantique dont les travaux sous-tendent les "
+"transistors, les semi-conducteurs et les micropuces à la base de toute "
+"l'informatique moderne."
+
+#: .\templates\public\founding_story.html:62
+msgid "The promise"
+msgstr "La promesse"
+
+#: .\templates\public\founding_story.html:63
+msgid ""
+"This service is non profit and free, and it will stay that way. There is no "
+"upsell, no paid tier hiding the real answers, and no selling of your data. "
+"The goal is simple: protect small businesses and ordinary people from "
+"hacking and the illegal use of their data. If this project helps even one "
+"person avoid the night I went through, it has done its job."
+msgstr ""
+"Ce service est à but non lucratif et gratuit, et il le restera. Il n'y a pas"
+" de vente incitative, pas d'offre payante cachant les vraies réponses, et "
+"aucune revente de vos données. L'objectif est simple : protéger les petites "
+"entreprises et les gens ordinaires contre le piratage et l'usage illégal de "
+"leurs données. Si ce projet aide ne serait-ce qu'une seule personne à éviter"
+" la nuit que j'ai traversée, il a rempli sa mission."
+
+#: .\templates\public\founding_story.html:67
+msgid "Scan your website for free"
+msgstr "Analysez votre site gratuitement"
+
+#: .\templates\public\home.html:4
+msgid "Louis WP Scan - Free WordPress security scanner"
+msgstr "Louis WP Scan - Scanner de sécurité WordPress gratuit"
+
+# ----- Home -----
+#: .\templates\public\home.html:13
+msgid "Free non profit service"
+msgstr "Service gratuit à but non lucratif"
+
+#: .\templates\public\home.html:15
+msgid "Is your WordPress website"
+msgstr "Votre site WordPress est-il"
+
+#: .\templates\public\home.html:16
+msgid "really secure?"
+msgstr "vraiment sécurisé ?"
+
+#: .\templates\public\home.html:19
+msgid ""
+"Enter your address below. In a few seconds we check the most common "
+"weaknesses that attackers look for, and we show you exactly how to fix each "
+"one. No account needed."
+msgstr ""
+"Entrez votre adresse ci-dessous. En quelques secondes, nous vérifions les "
+"failles les plus courantes recherchées par les attaquants et nous vous "
+"montrons précisément comment corriger chacune. Aucun compte requis."
+
+#: .\templates\public\home.html:26
+msgid "yourwebsite.com"
+msgstr "votresite.com"
+
+#: .\templates\public\home.html:29
+msgid "Scan now"
+msgstr "Analyser"
+
+#: .\templates\public\home.html:35
+msgid ""
+"We only read public pages. We never log in or change anything on your site."
+msgstr ""
+"Nous lisons uniquement les pages publiques. Nous ne nous connectons jamais "
+"et ne modifions rien sur votre site."
+
+#: .\templates\public\home.html:47
+msgid "Brute force checks"
+msgstr "Tests de force brute"
+
+#: .\templates\public\home.html:48
+msgid "DDoS readiness"
+msgstr "Préparation anti-DDoS"
+
+#: .\templates\public\home.html:49
+msgid "Exposed files"
+msgstr "Fichiers exposés"
+
+#: .\templates\public\home.html:50
+msgid "Privacy by default"
+msgstr "Confidentialité par défaut"
+
+#: .\templates\public\home.html:59
+msgid "How it works"
+msgstr "Comment ça marche"
+
+#: .\templates\public\home.html:60
+msgid "Three simple steps to a safer website."
+msgstr "Trois étapes simples vers un site plus sûr."
+
+#: .\templates\public\home.html:66
+msgid "Enter your address"
+msgstr "Entrez votre adresse"
+
+#: .\templates\public\home.html:67
+msgid "Type your website address and start the scan. Nothing to install."
+msgstr ""
+"Saisissez l'adresse de votre site et lancez l'analyse. Rien à installer."
+
+#: .\templates\public\home.html:73
+msgid "We run safe checks"
+msgstr "Nous effectuons des tests sûrs"
+
+#: .\templates\public\home.html:74
+msgid ""
+"We look at public pages only and test the weaknesses attackers try first."
+msgstr ""
+"Nous consultons uniquement les pages publiques et testons les failles que "
+"les attaquants tentent en premier."
+
+#: .\templates\public\home.html:80
+msgid "Follow the guide"
+msgstr "Suivez le guide"
+
+#: .\templates\public\home.html:81
+msgid ""
+"You get a clear score and a step by step fix guide written in plain "
+"language."
+msgstr ""
+"Vous obtenez une note claire et un guide de correction étape par étape "
+"rédigé simplement."
+
+#: .\templates\public\home.html:93
+msgid "What we look for"
+msgstr "Ce que nous vérifions"
+
+#: .\templates\public\home.html:94
+msgid ""
+"We focus on the issues that cause most WordPress break ins, kept light "
+"enough for any hosting."
+msgstr ""
+"Nous nous concentrons sur les problèmes à l'origine de la plupart des "
+"piratages WordPress, tout en restant assez léger pour tout hébergement."
+
+#: .\templates\public\home.html:96
+msgid "Login and brute force protection"
+msgstr "Protection de la connexion et contre la force brute"
+
+#: .\templates\public\home.html:97
+msgid "XML-RPC abuse used for password guessing and DDoS"
+msgstr ""
+"Abus de XML-RPC utilisé pour deviner les mots de passe et lancer des "
+"attaques DDoS"
+
+#: .\templates\public\home.html:98
+msgid "Default URLs and files left exposed"
+msgstr "URL et fichiers par défaut laissés exposés"
+
+#: .\templates\public\home.html:99
+msgid "DDoS and web firewall readiness"
+msgstr "Préparation anti-DDoS et pare-feu applicatif"
+
+#: .\templates\public\home.html:100
+msgid "HTTPS, security headers and version leaks"
+msgstr "HTTPS, en-têtes de sécurité et fuites de version"
+
+#: .\templates\public\home.html:101
+msgid "Username enumeration and directory listing"
+msgstr "Énumération des identifiants et listage des répertoires"
+
+#: .\templates\public\home.html:109
+msgid ""
+"Security knowledge should not be a luxury reserved for big companies. We "
+"protect small businesses and everyday people so that no one loses their "
+"website, their hard work, or their customers private data to a preventable "
+"attack. This service is, and will always remain, free."
+msgstr ""
+"Le savoir en sécurité ne devrait pas être un luxe réservé aux grandes "
+"entreprises. Nous protégeons les petites entreprises et les particuliers "
+"afin que personne ne perde son site, son travail ou les données privées de "
+"ses clients à cause d'une attaque évitable. Ce service est et restera "
+"toujours gratuit."
+
+#: .\templates\public\home.html:124
+msgid "Scanning your website..."
+msgstr "Analyse de votre site..."
+
+#: .\templates\public\home.html:133
+msgid "Reaching the website..."
+msgstr "Connexion au site..."
+
+#: .\templates\public\home.html:134
+msgid "Detecting WordPress..."
+msgstr "Détection de WordPress..."
+
+#: .\templates\public\home.html:135
+msgid "Checking login protection..."
+msgstr "Vérification de la protection de connexion..."
+
+#: .\templates\public\home.html:136
+msgid "Testing XML-RPC and DDoS readiness..."
+msgstr "Test de XML-RPC et de la préparation anti-DDoS..."
+
+#: .\templates\public\home.html:137
+msgid "Looking for exposed files..."
+msgstr "Recherche de fichiers exposés..."
+
+#: .\templates\public\home.html:138
+msgid "Reviewing security headers..."
+msgstr "Vérification des en-têtes de sécurité..."
+
+#: .\templates\public\home.html:139
+msgid "Building your fix guide..."
+msgstr "Création de votre guide de correction..."
+
+#: .\templates\public\home.html:141
+msgid "Something went wrong. Please check the address and try again."
+msgstr "Une erreur est survenue. Veuillez vérifier l'adresse et réessayer."
+
+#: .\templates\public\privacy.html:5
+msgid ""
+"How Louis WP Scan collects, uses and protects data, in line with the EU "
+"General Data Protection Regulation."
+msgstr ""
+"Comment Louis WP Scan collecte, utilise et protège les données, conformément"
+" au Règlement général sur la protection des données de l'UE."
+
+#: .\templates\public\privacy.html:10 .\templates\public\terms.html:44
+msgid "Privacy"
+msgstr "Confidentialité"
+
+# ----- Privacy / Terms shared -----
+#: .\templates\public\privacy.html:12 .\templates\public\terms.html:12
+msgid "Last updated"
+msgstr "Dernière mise à jour"
+
+#: .\templates\public\privacy.html:21
+msgid ""
+"Louis WP Scan (\"we\", \"us\", or \"the service\") is a non profit "
+"initiative available at https://louiswpscan.org. We respect your privacy and"
+" we are committed to protecting your personal data. This policy explains "
+"what we collect, why, and the rights you have under the European Union "
+"General Data Protection Regulation (GDPR)."
+msgstr ""
+"Louis WP Scan (« nous », « notre » ou « le service ») est une initiative à "
+"but non lucratif disponible à l'adresse https://louiswpscan.org. Nous "
+"respectons votre vie privée et nous nous engageons à protéger vos données "
+"personnelles. Cette politique explique ce que nous collectons, pourquoi, et "
+"les droits dont vous disposez en vertu du Règlement général sur la "
+"protection des données de l'Union européenne (RGPD)."
+
+#: .\templates\public\privacy.html:23
+msgid "Who is responsible for your data"
+msgstr "Qui est responsable de vos données"
+
+#: .\templates\public\privacy.html:24
+msgid ""
+"The data controller for this service is the Louis WP Scan project. If you "
+"have any question about this policy or about your data, you can contact us "
+"at contact@louiswpscan.org."
+msgstr ""
+"Le responsable du traitement de ce service est le projet Louis WP Scan. Pour"
+" toute question sur cette politique ou sur vos données, vous pouvez nous "
+"contacter à l'adresse contact@louiswpscan.org."
+
+#: .\templates\public\privacy.html:26
+msgid "What we collect and why"
+msgstr "Ce que nous collectons et pourquoi"
+
+#: .\templates\public\privacy.html:27
+msgid ""
+"We follow the principle of data minimisation. We only collect what is needed"
+" to run the service."
+msgstr ""
+"Nous appliquons le principe de minimisation des données. Nous ne collectons "
+"que ce qui est nécessaire au fonctionnement du service."
+
+#: .\templates\public\privacy.html:29
+msgid ""
+"<strong>Scan data.</strong> When you scan a website we store the address you"
+" entered, the date and time of the scan, and a short summary of the result, "
+"such as the number of issues found and the security grade. We do not store "
+"the full content of your website or any login details."
+msgstr ""
+"<strong>Données d'analyse.</strong> Lorsque vous analysez un site, nous "
+"conservons l'adresse que vous avez saisie, la date et l'heure de l'analyse, "
+"ainsi qu'un bref résumé du résultat, comme le nombre de problèmes trouvés et"
+" la note de sécurité. Nous ne conservons ni le contenu complet de votre site"
+" ni aucun identifiant de connexion."
+
+#: .\templates\public\privacy.html:30
+msgid ""
+"<strong>Contact data.</strong> If you use the contact form, we store the "
+"name, email address, subject and message you provide, so that we can reply "
+"to you."
+msgstr ""
+"<strong>Données de contact.</strong> Si vous utilisez le formulaire de "
+"contact, nous conservons le nom, l'adresse e-mail, l'objet et le message que"
+" vous fournissez, afin de pouvoir vous répondre."
+
+#: .\templates\public\privacy.html:31
+msgid ""
+"<strong>Analytics data.</strong> With your consent only, we use Google "
+"Analytics to understand how the service is used so we can improve it. This "
+"may include anonymised usage data such as pages visited and approximate "
+"region."
+msgstr ""
+"<strong>Données statistiques.</strong> Avec votre consentement uniquement, "
+"nous utilisons Google Analytics pour comprendre comment le service est "
+"utilisé afin de l'améliorer. Cela peut inclure des données d'usage "
+"anonymisées telles que les pages visitées et la région approximative."
+
+#: .\templates\public\privacy.html:34
+msgid "Legal basis for processing"
+msgstr "Base légale du traitement"
+
+#: .\templates\public\privacy.html:36
+msgid ""
+"<strong>Legitimate interest</strong> for running the scan you requested and "
+"keeping basic summary records to operate and improve the service."
+msgstr ""
+"<strong>Intérêt légitime</strong> pour effectuer l'analyse que vous avez "
+"demandée et conserver des enregistrements de synthèse de base afin de faire "
+"fonctionner et d'améliorer le service."
+
+#: .\templates\public\privacy.html:37
+msgid ""
+"<strong>Consent</strong> for analytics cookies. These are switched off until"
+" you accept them, and you can withdraw your consent at any time."
+msgstr ""
+"<strong>Consentement</strong> pour les cookies de statistiques. Ils sont "
+"désactivés jusqu'à ce que vous les acceptiez, et vous pouvez retirer votre "
+"consentement à tout moment."
+
+#: .\templates\public\privacy.html:38
+msgid ""
+"<strong>Consent and legitimate interest</strong> for replying to messages "
+"you send us through the contact form."
+msgstr ""
+"<strong>Consentement et intérêt légitime</strong> pour répondre aux messages"
+" que vous nous envoyez via le formulaire de contact."
+
+#: .\templates\public\privacy.html:41
+msgid "Cookies and analytics"
+msgstr "Cookies et statistiques"
+
+#: .\templates\public\privacy.html:42
+msgid ""
+"We use a small number of strictly necessary cookies that are required for "
+"the website to work, for example to keep your chosen language and to protect"
+" forms against abuse. These do not require consent."
+msgstr ""
+"Nous utilisons un petit nombre de cookies strictement nécessaires au "
+"fonctionnement du site, par exemple pour conserver la langue que vous avez "
+"choisie et pour protéger les formulaires contre les abus. Ceux-ci ne "
+"nécessitent pas de consentement."
+
+#: .\templates\public\privacy.html:43
+msgid ""
+"We also use Google Analytics, but only after you click Accept on our cookie "
+"banner. Until then, no analytics cookies are set and no analytics scripts "
+"are loaded. You can change your decision at any time using the Cookie "
+"settings link in the footer."
+msgstr ""
+"Nous utilisons également Google Analytics, mais uniquement après que vous "
+"avez cliqué sur Accepter dans notre bandeau de cookies. Jusque-là, aucun "
+"cookie de statistiques n'est déposé et aucun script de statistiques n'est "
+"chargé. Vous pouvez modifier votre décision à tout moment via le lien "
+"Paramètres des cookies en bas de page."
+
+#: .\templates\public\privacy.html:45
+msgid "Our analytics identifier"
+msgstr "Notre identifiant de statistiques"
+
+#: .\templates\public\privacy.html:48
+msgid "How long we keep your data"
+msgstr "Combien de temps nous conservons vos données"
+
+#: .\templates\public\privacy.html:49
+msgid ""
+"Scan summary records are kept only as long as needed to operate the service "
+"and may be deleted periodically. Contact messages are kept only as long as "
+"needed to handle your request. Analytics data follows the retention period "
+"set in Google Analytics."
+msgstr ""
+"Les enregistrements de synthèse des analyses ne sont conservés que le temps "
+"nécessaire au fonctionnement du service et peuvent être supprimés "
+"périodiquement. Les messages de contact ne sont conservés que le temps "
+"nécessaire au traitement de votre demande. Les données statistiques suivent "
+"la durée de conservation définie dans Google Analytics."
+
+#: .\templates\public\privacy.html:51
+msgid "Who we share data with"
+msgstr "Avec qui nous partageons les données"
+
+#: .\templates\public\privacy.html:52
+msgid ""
+"We do not sell your data and we never will. We share data only with the "
+"service providers needed to run the site, such as our hosting provider and, "
+"where you consented, Google Analytics. These providers act on our "
+"instructions."
+msgstr ""
+"Nous ne vendons pas vos données et ne le ferons jamais. Nous ne partageons "
+"les données qu'avec les prestataires nécessaires au fonctionnement du site, "
+"tels que notre hébergeur et, lorsque vous y avez consenti, Google Analytics."
+" Ces prestataires agissent selon nos instructions."
+
+#: .\templates\public\privacy.html:54
+msgid "International transfers"
+msgstr "Transferts internationaux"
+
+#: .\templates\public\privacy.html:55
+msgid ""
+"Some providers, such as Google, may process data outside the European "
+"Economic Area. Where this happens, the transfer is covered by appropriate "
+"safeguards such as the European Commission standard contractual clauses."
+msgstr ""
+"Certains prestataires, comme Google, peuvent traiter des données en dehors "
+"de l'Espace économique européen. Le cas échéant, le transfert est encadré "
+"par des garanties appropriées telles que les clauses contractuelles types de"
+" la Commission européenne."
+
+#: .\templates\public\privacy.html:57
+msgid "Your rights"
+msgstr "Vos droits"
+
+#: .\templates\public\privacy.html:58
+msgid "Under the GDPR you have the right to:"
+msgstr "En vertu du RGPD, vous avez le droit de :"
+
+#: .\templates\public\privacy.html:60
+msgid "access the personal data we hold about you"
+msgstr "accéder aux données personnelles que nous détenons à votre sujet"
+
+#: .\templates\public\privacy.html:61
+msgid "ask us to correct data that is wrong"
+msgstr "nous demander de corriger des données inexactes"
+
+#: .\templates\public\privacy.html:62
+msgid "ask us to delete your data"
+msgstr "nous demander de supprimer vos données"
+
+#: .\templates\public\privacy.html:63
+msgid "object to or restrict how we process your data"
+msgstr "vous opposer au traitement de vos données ou en limiter la portée"
+
+#: .\templates\public\privacy.html:64
+msgid "withdraw consent at any time, for example for analytics"
+msgstr ""
+"retirer votre consentement à tout moment, par exemple pour les statistiques"
+
+#: .\templates\public\privacy.html:65
+msgid "lodge a complaint with your local data protection authority"
+msgstr ""
+"déposer une réclamation auprès de votre autorité locale de protection des "
+"données"
+
+#: .\templates\public\privacy.html:67
+msgid ""
+"To exercise any of these rights, contact us at contact@louiswpscan.org. We "
+"will respond within the time limits set by law."
+msgstr ""
+"Pour exercer l'un de ces droits, contactez-nous à l'adresse "
+"contact@louiswpscan.org. Nous vous répondrons dans les délais prévus par la "
+"loi."
+
+#: .\templates\public\privacy.html:69
+msgid "Scanning other people websites"
+msgstr "Analyser les sites d'autres personnes"
+
+#: .\templates\public\privacy.html:70
+msgid ""
+"This service is meant to help website owners check their own sites. Only "
+"scan a website that you own or that you have permission to test."
+msgstr ""
+"Ce service est destiné à aider les propriétaires de sites à vérifier leurs "
+"propres sites. N'analysez qu'un site qui vous appartient ou que vous avez "
+"l'autorisation de tester."
+
+#: .\templates\public\privacy.html:72
+msgid "Changes to this policy"
+msgstr "Modifications de cette politique"
+
+#: .\templates\public\privacy.html:73
+msgid ""
+"We may update this policy from time to time. The date at the top shows when "
+"it was last changed. Significant changes will be made clear on this page."
+msgstr ""
+"Nous pouvons mettre à jour cette politique de temps à autre. La date en haut"
+" indique la dernière modification. Les changements importants seront "
+"clairement signalés sur cette page."
+
+# ----- Result page -----
+#: .\templates\public\scan_result.html:4
+msgid "Scan result"
+msgstr "Résultat de l'analyse"
+
+#: .\templates\public\scan_result.html:5
+#, python-format
+msgid "Security scan result for %(d)s by Louis WP Scan."
+msgstr "Résultat de l'analyse de sécurité pour %(d)s par Louis WP Scan."
+
+#: .\templates\public\scan_result.html:11
+msgid "Scan another site"
+msgstr "Analyser un autre site"
+
+#: .\templates\public\scan_result.html:15
+msgid "Result for"
+msgstr "Résultat pour"
+
+#: .\templates\public\scan_result.html:19
+msgid "Scanned on"
+msgstr "Analysé le"
+
+#: .\templates\public\scan_result.html:22
+msgid "WordPress detected"
+msgstr "WordPress détecté"
+
+#: .\templates\public\scan_result.html:24
+msgid "WordPress not clearly detected"
+msgstr "WordPress non clairement détecté"
+
+#: .\templates\public\scan_result.html:34
+msgid "Security score"
+msgstr "Note de sécurité"
+
+#: .\templates\public\scan_result.html:45
+msgid "We could not reach this website"
+msgstr "Nous n'avons pas pu joindre ce site"
+
+#: .\templates\public\scan_result.html:46
+msgid ""
+"The address did not respond. Please check that it is spelled correctly and "
+"that the site is online, then try again."
+msgstr ""
+"L'adresse n'a pas répondu. Vérifiez l'orthographe et que le site est en "
+"ligne, puis réessayez."
+
+#: .\templates\public\scan_result.html:58
+msgid "High priority"
+msgstr "Priorité haute"
+
+#: .\templates\public\scan_result.html:64
+msgid "Medium"
+msgstr "Moyenne"
+
+#: .\templates\public\scan_result.html:70
+msgid "Low"
+msgstr "Faible"
+
+#: .\templates\public\scan_result.html:82
+msgid "Your personal fix guide"
+msgstr "Votre guide de correction personnalisé"
+
+#: .\templates\public\scan_result.html:99
+msgid "Passed"
+msgstr "Validé"
+
+#: .\templates\public\scan_result.html:109
+msgid "How to fix it"
+msgstr "Comment corriger"
+
+#: .\templates\public\scan_result.html:122
+msgid ""
+"This is an automated surface level review of public information only. It "
+"does not replace a full professional security audit, and a high score does "
+"not guarantee a site cannot be attacked. Always keep WordPress, themes and "
+"plugins updated and keep regular backups."
+msgstr ""
+"Il s'agit d'une analyse automatisée et superficielle d'informations "
+"publiques uniquement. Elle ne remplace pas un audit de sécurité "
+"professionnel complet, et une bonne note ne garantit pas qu'un site ne peut "
+"être attaqué. Maintenez toujours WordPress, les thèmes et les extensions à "
+"jour et conservez des sauvegardes régulières."
+
+#: .\templates\public\scan_result.html:127
+msgid "Scan another website"
+msgstr "Analyser un autre site"
+
+#: .\templates\public\terms.html:5
+msgid ""
+"The terms and conditions for using Louis WP Scan, a free non profit "
+"WordPress security scanner."
+msgstr ""
+"Les conditions générales d'utilisation de Louis WP Scan, un scanner de "
+"sécurité WordPress gratuit et à but non lucratif."
+
+#: .\templates\public\terms.html:21
+msgid ""
+"Welcome to Louis WP Scan. By using this website and its scanning service, "
+"available at https://louiswpscan.org, you agree to the following terms. "
+"Please read them carefully. If you do not agree, please do not use the "
+"service."
+msgstr ""
+"Bienvenue sur Louis WP Scan. En utilisant ce site et son service d'analyse, "
+"disponible à l'adresse https://louiswpscan.org, vous acceptez les conditions"
+" suivantes. Veuillez les lire attentivement. Si vous n'êtes pas d'accord, "
+"veuillez ne pas utiliser le service."
+
+#: .\templates\public\terms.html:23
+msgid "About the service"
+msgstr "À propos du service"
+
+#: .\templates\public\terms.html:24
+msgid ""
+"Louis WP Scan is a free, non profit service that performs an automated, "
+"surface level security check of publicly available information on a "
+"WordPress website and suggests possible improvements. It is provided for "
+"educational and protective purposes."
+msgstr ""
+"Louis WP Scan est un service gratuit et à but non lucratif qui effectue une "
+"vérification de sécurité automatisée et superficielle des informations "
+"publiquement accessibles d'un site WordPress et propose des améliorations "
+"possibles. Il est fourni à des fins éducatives et de protection."
+
+#: .\templates\public\terms.html:26
+msgid "Permitted use"
+msgstr "Utilisation autorisée"
+
+#: .\templates\public\terms.html:27
+msgid ""
+"You may only scan a website that you own or that you have clear permission "
+"to test. Using this service to probe, map or attack websites without "
+"authorisation is strictly forbidden and may be illegal in your country. You "
+"are solely responsible for making sure you have the right to scan any "
+"address you enter."
+msgstr ""
+"Vous ne pouvez analyser qu'un site qui vous appartient ou que vous avez "
+"clairement l'autorisation de tester. Utiliser ce service pour sonder, "
+"cartographier ou attaquer des sites sans autorisation est strictement "
+"interdit et peut être illégal dans votre pays. Vous êtes seul responsable de"
+" vous assurer que vous avez le droit d'analyser toute adresse que vous "
+"saisissez."
+
+#: .\templates\public\terms.html:29
+msgid "No guarantee"
+msgstr "Aucune garantie"
+
+#: .\templates\public\terms.html:30
+msgid ""
+"The service checks a limited set of common issues using public information "
+"only. It does not perform a complete security audit. A good score does not "
+"mean a website is safe, and the absence of a finding does not mean a "
+"weakness does not exist. We do not guarantee that the results are complete, "
+"accurate or free of error."
+msgstr ""
+"Le service vérifie un ensemble limité de problèmes courants en utilisant "
+"uniquement des informations publiques. Il n'effectue pas un audit de "
+"sécurité complet. Une bonne note ne signifie pas qu'un site est sûr, et "
+"l'absence de constat ne signifie pas qu'une faille n'existe pas. Nous ne "
+"garantissons pas que les résultats soient complets, exacts ou exempts "
+"d'erreur."
+
+#: .\templates\public\terms.html:32
+msgid "Your responsibility"
+msgstr "Votre responsabilité"
+
+#: .\templates\public\terms.html:33
+msgid ""
+"Any action you take based on a scan result is your own decision and your own"
+" responsibility. Before making changes to a live website you should keep a "
+"full backup and, if you are unsure, ask a qualified professional. We are not"
+" responsible for any change you make to your site."
+msgstr ""
+"Toute action que vous entreprenez sur la base d'un résultat d'analyse relève"
+" de votre propre décision et de votre propre responsabilité. Avant de "
+"modifier un site en production, vous devez conserver une sauvegarde complète"
+" et, en cas de doute, faire appel à un professionnel qualifié. Nous ne "
+"sommes pas responsables des modifications que vous apportez à votre site."
+
+#: .\templates\public\terms.html:35
+msgid "Limitation of liability"
+msgstr "Limitation de responsabilité"
+
+#: .\templates\public\terms.html:36
+msgid ""
+"To the fullest extent allowed by law, Louis WP Scan and the people behind it"
+" shall not be liable for any direct, indirect or consequential loss or "
+"damage arising from the use of, or inability to use, this service or the "
+"information it provides. The service is offered on an \"as is\" and \"as "
+"available\" basis."
+msgstr ""
+"Dans toute la mesure permise par la loi, Louis WP Scan et les personnes qui "
+"l'animent ne sauraient être tenus responsables de toute perte ou tout "
+"dommage direct, indirect ou consécutif découlant de l'utilisation ou de "
+"l'impossibilité d'utiliser ce service ou les informations qu'il fournit. Le "
+"service est fourni « en l'état » et « selon disponibilité »."
+
+#: .\templates\public\terms.html:38
+msgid "Availability"
+msgstr "Disponibilité"
+
+#: .\templates\public\terms.html:39
+msgid ""
+"Because this is a non profit project, the service may be slow, limited, or "
+"temporarily unavailable, and may change or stop at any time without notice. "
+"We do our best, but we cannot promise continuous availability."
+msgstr ""
+"Comme il s'agit d'un projet à but non lucratif, le service peut être lent, "
+"limité ou temporairement indisponible, et peut changer ou s'arrêter à tout "
+"moment sans préavis. Nous faisons de notre mieux, mais nous ne pouvons pas "
+"garantir une disponibilité continue."
+
+#: .\templates\public\terms.html:41
+msgid "Intellectual property"
+msgstr "Propriété intellectuelle"
+
+#: .\templates\public\terms.html:42
+msgid ""
+"The name Louis WP Scan, the content, and the design of this website are "
+"protected. You may share links to our pages, but you may not copy or reuse "
+"our content for commercial purposes without permission."
+msgstr ""
+"Le nom Louis WP Scan, le contenu et le design de ce site sont protégés. Vous"
+" pouvez partager des liens vers nos pages, mais vous ne pouvez pas copier ou"
+" réutiliser notre contenu à des fins commerciales sans autorisation."
+
+#: .\templates\public\terms.html:45
+msgid ""
+"Your use of the service is also governed by our privacy policy, which "
+"explains how we handle data in line with the EU General Data Protection "
+"Regulation."
+msgstr ""
+"Votre utilisation du service est également régie par notre politique de "
+"confidentialité, qui explique comment nous traitons les données conformément"
+" au Règlement général sur la protection des données de l'UE."
+
+#: .\templates\public\terms.html:47
+msgid "Governing law"
+msgstr "Droit applicable"
+
+#: .\templates\public\terms.html:48
+msgid ""
+"These terms are governed by the laws applicable in the European Union and, "
+"where relevant, the country in which the service is operated. Any dispute "
+"will be handled by the competent courts of that place."
+msgstr ""
+"Les présentes conditions sont régies par le droit applicable dans l'Union "
+"européenne et, le cas échéant, par celui du pays dans lequel le service est "
+"exploité. Tout litige sera traité par les tribunaux compétents de ce lieu."
+
+#: .\templates\public\terms.html:50
+msgid "Changes to these terms"
+msgstr "Modifications de ces conditions"
+
+#: .\templates\public\terms.html:51
+msgid ""
+"We may update these terms from time to time. The date at the top shows the "
+"latest version. By continuing to use the service after a change, you accept "
+"the updated terms."
+msgstr ""
+"Nous pouvons mettre à jour ces conditions de temps à autre. La date en haut "
+"indique la dernière version. En continuant à utiliser le service après une "
+"modification, vous acceptez les conditions mises à jour."
+
+#: .\templates\public\terms.html:55
+msgid ""
+"This document is provided in good faith and in plain language. It is not "
+"legal advice. You may wish to have it reviewed by a qualified professional "
+"for your specific situation."
+msgstr ""
+"Ce document est fourni de bonne foi et en langage clair. Il ne constitue pas"
+" un avis juridique. Vous pouvez souhaiter le faire examiner par un "
+"professionnel qualifié pour votre situation particulière."

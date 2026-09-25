@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Scan result" %} - {{ record.domain }} | Louis WP Scan{% endblock %}
+{% block description %}{% blocktrans with d=record.domain %}Security scan result for {{ d }} by Louis WP Scan.{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<section class="lwps-result-hero py-5">
+    <div class="container">
+        <a href="{% url 'public:home' %}" class="link-light small mb-3 d-inline-block">
+            <i class="bi bi-arrow-left"></i> {% trans "Scan another site" %}
+        </a>
+        <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+                <p class="text-light-muted mb-1 small text-uppercase">{% trans "Result for" %}</p>
+                <h1 class="h2 text-white text-break mb-2">{{ record.domain }}</h1>
+                <p class="text-light-muted mb-0">
+                    <i class="bi bi-clock-history"></i>
+                    {% trans "Scanned on" %} {{ record.scan_date|date:"d M Y, H:i" }}
+                    <!--
+                    {% if result.is_wordpress %}
+                        <span class="badge bg-success-subtle text-success-emphasis ms-2"><i class="bi bi-wordpress"></i> {% trans "WordPress detected" %}</span>
+                    {% else %}
+                        <span class="badge bg-secondary ms-2">{% trans "WordPress not clearly detected" %}</span>
+                    {% endif %}
+                    -->
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <div class="lwps-score-card lwps-grade-{{ result.grade|lower }}">
+                    <div class="lwps-score-grade">{{ result.grade }}</div>
+                    <div class="lwps-score-meta">
+                        <div class="lwps-score-number">{{ result.score }}<span>/100</span></div>
+                        <div class="small">{% trans "Security score" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if not result.reachable %}
+<div class="container py-5">
+    <div class="alert alert-warning">
+        <h5><i class="bi bi-exclamation-triangle"></i> {% trans "We could not reach this website" %}</h5>
+        <p class="mb-0">{% trans "The address did not respond. Please check that it is spelled correctly and that the site is online, then try again." %}</p>
+    </div>
+</div>
+{% else %}
+
+<!-- Summary counts -->
+<section class="py-4 bg-white border-bottom">
+    <div class="container">
+        <div class="row g-3 text-center">
+            <div class="col-4">
+                <div class="lwps-count lwps-count-high">
+                    <div class="lwps-count-num">{{ result.counts.high }}</div>
+                    <div class="lwps-count-label">{% trans "High priority" %}</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="lwps-count lwps-count-medium">
+                    <div class="lwps-count-num">{{ result.counts.medium }}</div>
+                    <div class="lwps-count-label">{% trans "Medium" %}</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="lwps-count lwps-count-low">
+                    <div class="lwps-count-num">{{ result.counts.low }}</div>
+                    <div class="lwps-count-label">{% trans "Low" %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed findings grouped by category -->
+<section class="py-5 bg-light-soft">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="lwps-section-title mb-4">{% trans "Your personal fix guide" %}</h2>
+
+                {% for category, items in grouped.items %}
+                <div class="mb-4">
+                    <h5 class="lwps-category-title">{{ category }}</h5>
+                    {% for c in items %}
+                    <div class="lwps-finding lwps-finding-{{ c.status }}">
+                        <div class="lwps-finding-head">
+                            <span class="lwps-finding-icon">
+                                {% if c.status == 'ok' or c.status == 'info' %}<i class="bi bi-check-circle-fill"></i>
+                                {% elif c.status == 'issue' %}<i class="bi bi-exclamation-octagon-fill"></i>
+                                {% else %}<i class="bi bi-exclamation-triangle-fill"></i>{% endif %}
+                            </span>
+                            <div class="flex-grow-1">
+                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                    <strong>{{ c.title }}</strong>
+                                    {% if c.status == 'ok' or c.status == 'info' %}
+                                        <span class="badge bg-success-subtle text-success-emphasis">{% trans "Passed" %}</span>
+                                    {% else %}
+                                        <span class="badge lwps-sev-{{ c.severity }}">{{ c.severity|capfirst }}</span>
+                                    {% endif %}
+                                </div>
+                                <p class="mb-0 text-muted mt-1">{{ c.finding }}</p>
+                            </div>
+                        </div>
+                        {% if c.fix %}
+                        <div class="lwps-finding-fix">
+                            <p class="fw-semibold mb-2"><i class="bi bi-tools"></i> {% trans "How to fix it" %}</p>
+                            <ol class="mb-0">
+                                {% for step in c.fix %}<li>{{ step }}</li>{% endfor %}
+                            </ol>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+
+                <div class="lwps-disclaimer mt-4">
+                    <i class="bi bi-info-circle"></i>
+                    {% blocktrans %}This is an automated surface level review of public information only. It does not replace a full professional security audit, and a high score does not guarantee a site cannot be attacked. Always keep WordPress, themes and plugins updated and keep regular backups.{% endblocktrans %}
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="{% url 'public:home' %}" class="btn btn-accent">
+                        <i class="bi bi-arrow-repeat"></i> {% trans "Scan another website" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Louis WP Scan - Free WordPress security scanner" %}{% endblock %}
+
+{% block content %}
+<!-- Hero with the scan input -->
+<section class="lwps-hero" id="scan">
+    <div class="lwps-hero-waves" aria-hidden="true"></div>
+    <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-9">
+                <span class="badge lwps-badge mb-3"><i class="bi bi-heart-fill me-1"></i>{% trans "Free non profit service" %}</span>
+                <h1 class="lwps-hero-title">
+                    {% trans "Is your WordPress website" %}<br>
+                    <span class="text-accent">{% trans "really secure?" %}</span>
+                </h1>
+                <p class="lwps-hero-lead">
+                    {% blocktrans %}Enter your address below. In a few seconds we check the most common weaknesses that attackers look for, and we show you exactly how to fix each one. No account needed.{% endblocktrans %}
+                </p>
+
+                <form id="lwps-scan-form" class="lwps-scan-form mt-4" data-action="{% url 'public:scan_api' %}" novalidate>
+                    <div class="input-group input-group-lg shadow-soft">
+                        <span class="input-group-text bg-white border-0"><i class="bi bi-globe2 text-muted"></i></span>
+                        <input type="text" id="lwps-url" name="url" class="form-control border-0"
+                               placeholder="{% trans 'yourwebsite.com' %}" autocomplete="off" spellcheck="false"
+                               aria-label="{% trans 'Website address to scan' %}" required>
+                        <button class="btn btn-accent px-4" type="submit" id="lwps-scan-btn">
+                            <i class="bi bi-shield-check me-1"></i>{% trans "Scan now" %}
+                        </button>
+                    </div>
+                    <div id="lwps-scan-error" class="text-warning small mt-2" role="alert" hidden></div>
+                    <p class="small text-light-muted mt-2 mb-0">
+                        <i class="bi bi-lock-fill"></i>
+                        {% trans "We only read public pages. We never log in or change anything on your site." %}
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust strip -->
+<section class="py-4 bg-white border-bottom">
+    <div class="container">
+        <div class="row text-center g-3 lwps-trust">
+            <div class="col-6 col-md-3"><i class="bi bi-shield-lock"></i><span>{% trans "Brute force checks" %}</span></div>
+            <div class="col-6 col-md-3"><i class="bi bi-hdd-network"></i><span>{% trans "DDoS readiness" %}</span></div>
+            <div class="col-6 col-md-3"><i class="bi bi-folder2-open"></i><span>{% trans "Exposed files" %}</span></div>
+            <div class="col-6 col-md-3"><i class="bi bi-eye-slash"></i><span>{% trans "Privacy by default" %}</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="lwps-section-title">{% trans "How it works" %}</h2>
+            <p class="text-muted">{% trans "Three simple steps to a safer website." %}</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="lwps-step h-100">
+                    <div class="lwps-step-num">1</div>
+                    <h5>{% trans "Enter your address" %}</h5>
+                    <p class="text-muted mb-0">{% trans "Type your website address and start the scan. Nothing to install." %}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="lwps-step h-100">
+                    <div class="lwps-step-num">2</div>
+                    <h5>{% trans "We run safe checks" %}</h5>
+                    <p class="text-muted mb-0">{% trans "We look at public pages only and test the weaknesses attackers try first." %}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="lwps-step h-100">
+                    <div class="lwps-step-num">3</div>
+                    <h5>{% trans "Follow the guide" %}</h5>
+                    <p class="text-muted mb-0">{% trans "You get a clear score and a step by step fix guide written in plain language." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What we check -->
+<section class="py-5 bg-light-soft">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h2 class="lwps-section-title">{% trans "What we look for" %}</h2>
+                <p class="text-muted">{% trans "We focus on the issues that cause most WordPress break ins, kept light enough for any hosting." %}</p>
+                <ul class="lwps-check-list">
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Login and brute force protection" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "XML-RPC abuse used for password guessing and DDoS" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Default URLs and files left exposed" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "DDoS and web firewall readiness" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "HTTPS, security headers and version leaks" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Username enumeration and directory listing" %}</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="lwps-mission-card">
+                    <i class="bi bi-shield-heart lwps-mission-icon"></i>
+                    <h4>{% trans "Our mission" %}</h4>
+                    <p class="mb-0">
+                        {% blocktrans %}Security knowledge should not be a luxury reserved for big companies. We protect small businesses and everyday people so that no one loses their website, their hard work, or their customers private data to a preventable attack. This service is, and will always remain, free.{% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scanning animation overlay -->
+<div id="lwps-scan-overlay" class="lwps-scan-overlay" hidden aria-hidden="true">
+    <div class="lwps-scan-animation">
+        <div class="lwps-radar">
+            <div class="lwps-radar-sweep"></div>
+            <i class="bi bi-shield-shaded lwps-radar-core"></i>
+        </div>
+        <h4 class="mt-4 mb-1 text-white" id="lwps-scan-status">{% trans "Scanning your website..." %}</h4>
+        <p class="text-light-muted small mb-0" id="lwps-scan-target"></p>
+    </div>
+</div>
+
+<!-- Localized strings the scan animation cycles through -->
+<script id="lwps-i18n" type="application/json">
+{
+  "steps": [
+    "{% trans 'Reaching the website...' %}",
+    "{% trans 'Detecting WordPress...' %}",
+    "{% trans 'Checking login protection...' %}",
+    "{% trans 'Testing XML-RPC and DDoS readiness...' %}",
+    "{% trans 'Looking for exposed files...' %}",
+    "{% trans 'Reviewing security headers...' %}",
+    "{% trans 'Building your fix guide...' %}"
+  ],
+  "genericError": "{% trans 'Something went wrong. Please check the address and try again.' %}"
+}
+</script>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/scan.js' %}"></script>
+{% endblock %}

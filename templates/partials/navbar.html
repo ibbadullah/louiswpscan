@@ -1,0 +1,54 @@
+{% load i18n %}
+{% get_current_language as CURRENT_LANG %}
+<nav class="navbar navbar-expand-lg lwps-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'public:home' %}">
+            <span class="lwps-logo-mark"><i class="bi bi-shield-shaded"></i></span>
+            <span class="lwps-logo-text">Louis <span class="text-accent">WP Scan</span></span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <li class="nav-item"><a class="nav-link" href="{% url 'public:home' %}">{% trans "Home" %}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'public:about' %}">{% trans "About" %}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'public:founding_story' %}">{% trans "Our Story" %}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'public:contact' %}">{% trans "Contact" %}</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-translate"></i> {{ CURRENT_LANG|upper }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <form action="{% url 'set_language' %}" method="post" class="m-0">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ URL_EN }}">
+                                <input type="hidden" name="language" value="en">
+                                <button type="submit" class="dropdown-item {% if CURRENT_LANG == 'en' %}active{% endif %}">English</button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="{% url 'set_language' %}" method="post" class="m-0">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ URL_FR }}">
+                                <input type="hidden" name="language" value="fr">
+                                <button type="submit" class="dropdown-item {% if CURRENT_LANG == 'fr' %}active{% endif %}">Français</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-accent btn-sm px-3" href="{% url 'public:home' %}#scan">
+                        <i class="bi bi-search"></i> {% trans "Scan a site" %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

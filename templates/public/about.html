@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "About us" %} | Louis WP Scan{% endblock %}
+{% block description %}{% trans "Louis WP Scan is a free non profit WordPress security scanner with a mission to protect small businesses and people from preventable attacks." %}{% endblock %}
+
+{% block content %}
+<section class="lwps-page-hero">
+    <div class="container">
+        <span class="badge lwps-badge mb-3"><i class="bi bi-people-fill me-1"></i>{% trans "About us" %}</span>
+        <h1 class="text-white">{% trans "Protecting the small web" %}</h1>
+        <p class="text-light-muted lead mb-0">{% trans "A non profit effort to keep WordPress websites and the people behind them safe." %}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7 lwps-prose">
+                <h2>{% trans "Who we are" %}</h2>
+                <p>{% blocktrans %}Louis WP Scan is a non profit project created after one too many small websites were lost to attacks that were entirely preventable. WordPress powers a huge part of the web, from family blogs to local shops and charities. Many of these sites are run by people who are experts in their own field but were never meant to become security specialists.{% endblocktrans %}</p>
+                <p>{% blocktrans %}We exist to close that gap. We turn the technical checks a security professional would run into a simple, friendly report that anyone can act on.{% endblocktrans %}</p>
+
+                <h2 class="mt-5">{% trans "What makes us different" %}</h2>
+                <ul class="lwps-check-list">
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Completely free, with no hidden paid tier" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "We respect your privacy and store as little as possible" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Plain language fixes, not confusing jargon" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Safe, read only checks that never touch your content" %}</li>
+                    <li><i class="bi bi-check-circle-fill"></i>{% trans "Available in English and French" %}</li>
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <div class="lwps-mission-card mb-4">
+                    <i class="bi bi-bullseye lwps-mission-icon"></i>
+                    <h4>{% trans "Our mission" %}</h4>
+                    <p class="mb-0">{% trans "To protect small businesses and everyday people from hacking and the illegal use of their data, by making practical security knowledge free for everyone." %}</p>
+                </div>
+                <div class="lwps-mission-card lwps-mission-card-alt">
+                    <i class="bi bi-eye lwps-mission-icon"></i>
+                    <h4>{% trans "Our vision" %}</h4>
+                    <p class="mb-0">{% trans "A web where a small website is not an easy target, and where good security is something everyone can reach." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <p class="text-muted">{% trans "Curious where the name comes from?" %}</p>
+            <a href="{% url 'public:founding_story' %}" class="btn btn-outline-primary">
+                <i class="bi bi-stars"></i> {% trans "Read our founding story" %}
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

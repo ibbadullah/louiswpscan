@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Contact us" %} | Louis WP Scan{% endblock %}
+{% block description %}{% trans "Get in touch with the Louis WP Scan team. We are happy to help with questions about your scan result." %}{% endblock %}
+
+{% block content %}
+<section class="lwps-page-hero">
+    <div class="container">
+        <span class="badge lwps-badge mb-3"><i class="bi bi-envelope-fill me-1"></i>{% trans "Contact" %}</span>
+        <h1 class="text-white">{% trans "Get in touch" %}</h1>
+        <p class="text-light-muted lead mb-0">{% trans "Questions, feedback, or a suggestion? We would love to hear from you." %}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="card lwps-card shadow-soft">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="h4 mb-4">{% trans "Send us a message" %}</h2>
+
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+                        {% endif %}
+
+                        <form method="post" novalidate>
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label class="form-label" for="{{ form.name.id_for_label }}">{% trans "Your name" %}</label>
+                                {{ form.name }}
+                                {% if form.name.errors %}<div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="{{ form.email.id_for_label }}">{% trans "Your email" %}</label>
+                                {{ form.email }}
+                                {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="{{ form.subject.id_for_label }}">{% trans "Subject" %}</label>
+                                {{ form.subject }}
+                                {% if form.subject.errors %}<div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="{{ form.message.id_for_label }}">{% trans "Message" %}</label>
+                                {{ form.message }}
+                                {% if form.message.errors %}<div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>{% endif %}
+                            </div>
+                            <div class="d-none">{{ form.website }}</div>
+                            <button type="submit" class="btn btn-accent px-4">
+                                <i class="bi bi-send"></i> {% trans "Send message" %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="lwps-contact-aside">
+                    <h3 class="h5">{% trans "Other ways to reach us" %}</h3>
+                    <div class="lwps-contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <div>
+                            <div class="fw-semibold">{% trans "Email" %}</div>
+                            <a href="mailto:contact@louiswpscan.org">contact@louiswpscan.org</a>
+                        </div>
+                    </div>
+                    <div class="lwps-contact-item">
+                        <i class="bi bi-globe2"></i>
+                        <div>
+                            <div class="fw-semibold">{% trans "Website" %}</div>
+                            <a href="https://louiswpscan.org">louiswpscan.org</a>
+                        </div>
+                    </div>
+                    <div class="lwps-contact-item">
+                        <i class="bi bi-shield-heart"></i>
+                        <div>
+                            <div class="fw-semibold">{% trans "Non profit" %}</div>
+                            <span class="text-muted small">{% trans "We do this to help, not for profit." %}</span>
+                        </div>
+                    </div>
+                    <p class="text-muted small mt-3 mb-0">
+                        {% trans "We usually reply within a few days. Please remember we are a small non profit effort." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Our Story" %} | Louis WP Scan{% endblock %}
+{% block description %}{% trans "Why Louis WP Scan exists, and the story of the man it is named after: the physicist Louis de Broglie." %}{% endblock %}
+
+{% block content %}
+<section class="lwps-page-hero">
+    <div class="container">
+        <span class="badge lwps-badge mb-3"><i class="bi bi-stars me-1"></i>{% trans "Our story" %}</span>
+        <h1 class="text-white">{% trans "Why Louis WP Scan exists" %}</h1>
+        <p class="text-light-muted lead mb-0">{% trans "A small project born from a hard lesson, and named after a man who changed the world." %}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto lwps-prose">
+
+                <h2>{% trans "It started with a hacked website" %}</h2>
+                <p>{% blocktrans %}One of my own WordPress websites was hacked. If you have ever been through it, you know the feeling. The work of months or years can be damaged in a single night. There is the stress, the cleanup, the worry about what happened to the data, and the helpless feeling of not knowing how it was even possible.{% endblocktrans %}</p>
+                <p>{% blocktrans %}After I recovered the site, I made a decision. Instead of only protecting my own corner of the web, I wanted to help other people avoid the same painful experience. So I built this free, non profit service. It scans WordPress websites, finds the common weaknesses that attackers exploit, and explains in plain language how to fix them.{% endblocktrans %}</p>
+
+                <div class="lwps-quote">
+                    <i class="bi bi-quote"></i>
+                    <p>{% trans "No one should lose their website, their work, or their customers data to an attack that could have been prevented." %}</p>
+                </div>
+
+                <!-- Founder card. Replace the image and the name/title with your own. -->
+                <div class="lwps-founder-card">
+                    <div class="lwps-founder-photo">
+                        <img src="{% static 'img/founder.png' %}" alt="{% trans 'Founder of Louis WP Scan' %}"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+                        <span class="lwps-founder-fallback" style="display:none;"><i class="bi bi-person"></i></span>
+                    </div>
+                    <div class="lwps-founder-info">
+                        <h5 class="mb-1">{% trans "Ibbad Ullah" %}</h5>
+                        <p class="lwps-founder-title mb-2">{% trans "Founder and developer, Louis WP Scan" %}</p>
+                        <p class="mb-0 text-muted">{% trans "I built this service after living through a website hack myself, so that other people would not have to face the same loss alone." %}</p>
+                    </div>
+                </div>
+
+                <h2 class="mt-5">{% trans "Why the name Louis" %}</h2>
+                <p>{% blocktrans %}This project carries the name Louis as a tribute to Louis de Broglie, the French physicist who won the Nobel Prize in Physics in 1929. I have a deep admiration for this man, and I wanted his name to live on in something that helps people.{% endblocktrans %}</p>
+                <p>{% blocktrans %}Louis de Broglie played a foundational role in the science that eventually made modern electronics possible. His idea that matter behaves as a wave became one of the key building blocks of quantum mechanics. That understanding later made it possible to create the technologies our entire digital world now rests on: transistors, semiconductors, lasers, and microchips.{% endblocktrans %}</p>
+                <p>{% blocktrans %}Put simply, every computer, every phone, and every website, including the very one you are protecting right now, stands on the foundation that thinkers like him helped to build. When you run a scan here, you are using a chain of technology that traces all the way back to his work. Naming this service after him is my small way of saying thank you.{% endblocktrans %}</p>
+
+                <div class="lwps-tribute-card">
+                    <div class="row align-items-center g-4">
+                        <div class="col-auto">
+                            <div class="lwps-tribute-avatar"><i class="bi bi-award"></i></div>
+                        </div>
+                        <div class="col">
+                            <h5 class="mb-1">{% trans "Louis de Broglie" %}</h5>
+                            <p class="text-muted mb-1 small">{% trans "Nobel Prize in Physics, 1929" %}</p>
+                            <p class="mb-0">{% trans "A pioneer of quantum mechanics whose work underpins the transistors, semiconductors and microchips behind all modern computing." %}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-5">{% trans "The promise" %}</h2>
+                <p>{% blocktrans %}This service is non profit and free, and it will stay that way. There is no upsell, no paid tier hiding the real answers, and no selling of your data. The goal is simple: protect small businesses and ordinary people from hacking and the illegal use of their data. If this project helps even one person avoid the night I went through, it has done its job.{% endblocktrans %}</p>
+
+                <div class="text-center mt-5">
+                    <a href="{% url 'public:home' %}#scan" class="btn btn-accent btn-lg">
+                        <i class="bi bi-shield-check"></i> {% trans "Scan your website for free" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

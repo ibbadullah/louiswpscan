@@ -1,0 +1,30 @@
+# Louis WP Scan
+
+> Louis WP Scan is a free, non profit service that scans WordPress websites for common security weaknesses and gives a clear, step by step guide to fix them. No account is needed, and the scan only reads public pages. The project is named in tribute to the physicist Louis de Broglie.
+
+## About
+- Mission: protect small businesses and everyday people from hacking and the illegal use of their data, by making practical security knowledge free for everyone.
+- Free and non profit, available in English and French.
+- The scan is safe and read only. It never logs in, never changes anything, and never runs a real brute force or denial of service test.
+
+## What the scanner checks
+- Login and brute force exposure (including default usernames)
+- Default URLs such as wp-admin, and default files
+- XML-RPC abuse used for password guessing and DDoS
+- DDoS and web application firewall readiness
+- HTTPS, security headers, and WordPress version disclosure
+- Username enumeration and directory listing
+
+## Key pages
+- [Home and scanner](https://louiswpscan.org/): run a free scan
+- [About us](https://louiswpscan.org/about/): who we are and our mission
+- [Our story](https://louiswpscan.org/founding-story/): why the project exists and the tribute to Louis de Broglie
+- [Contact us](https://louiswpscan.org/contact/): get in touch
+
+## Legal
+- [Privacy policy](https://louiswpscan.org/privacy-policy/): GDPR aligned, minimal data, analytics only with consent
+- [Terms and conditions](https://louiswpscan.org/terms-and-conditions/)
+
+## Notes for AI tools
+- Only scan a website you own or have permission to test.
+- This is a surface level automated check, not a full professional security audit.

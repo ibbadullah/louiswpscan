@@ -1,0 +1,10 @@
+django==5.2.7   
+django-jazzmin==3.0.4 
+pillow==12.2.0
+requests==2.32.3 
+django-environ==0.11.2 
+whitenoise==6.7.0
+mysqlclient==2.2.4
+
+
+

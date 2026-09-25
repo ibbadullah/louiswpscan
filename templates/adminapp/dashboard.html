@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Team dashboard" %} | Louis WP Scan{% endblock %}
+
+{% block content %}
+<section class="lwps-page-hero py-4">
+    <div class="container">
+        <h1 class="h3 text-white mb-0"><i class="bi bi-speedometer2"></i> {% trans "Team dashboard" %}</h1>
+        <p class="text-light-muted mb-0">{% trans "Overview of scans and messages" %}</p>
+    </div>
+</section>
+
+<section class="py-4">
+    <div class="container">
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-lg-3">
+                <div class="lwps-stat-card">
+                    <div class="lwps-stat-num">{{ total_scans }}</div>
+                    <div class="lwps-stat-label">{% trans "Total scans" %}</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="lwps-stat-card">
+                    <div class="lwps-stat-num">{{ scans_30d }}</div>
+                    <div class="lwps-stat-label">{% trans "Last 30 days" %}</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="lwps-stat-card">
+                    <div class="lwps-stat-num">{{ avg_score }}</div>
+                    <div class="lwps-stat-label">{% trans "Average score" %}</div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="lwps-stat-card">
+                    <div class="lwps-stat-num">{{ unhandled_messages }}</div>
+                    <div class="lwps-stat-label">{% trans "Open messages" %}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="card lwps-card shadow-soft">
+                    <div class="card-header bg-white fw-semibold">{% trans "Latest scans" %}</div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>{% trans "Domain" %}</th>
+                                    <th>{% trans "Grade" %}</th>
+                                    <th>{% trans "Issues" %}</th>
+                                    <th>{% trans "Date" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for s in latest_scans %}
+                                <tr>
+                                    <td class="text-truncate" style="max-width:220px">{{ s.domain }}</td>
+                                    <td><span class="badge lwps-grade-badge lwps-grade-{{ s.grade|lower }}">{{ s.grade }}</span></td>
+                                    <td>{{ s.total_issues }}</td>
+                                    <td class="small text-muted">{{ s.scan_date|date:"d M, H:i" }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr><td colspan="4" class="text-center text-muted py-3">{% trans "No scans yet." %}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card lwps-card shadow-soft">
+                    <div class="card-header bg-white fw-semibold">{% trans "Latest messages" %}</div>
+                    <ul class="list-group list-group-flush">
+                        {% for m in latest_messages %}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <strong>{{ m.subject }}</strong>
+                                {% if not m.is_handled %}<span class="badge bg-warning text-dark">{% trans "New" %}</span>{% endif %}
+                            </div>
+                            <div class="small text-muted">{{ m.name }} ({{ m.email }})</div>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item text-center text-muted py-3">{% trans "No messages yet." %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <a href="/scp/" class="btn btn-outline-primary w-100 mt-3">
+                    <i class="bi bi-gear"></i> {% trans "Open Django admin" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% load i18n %}
+<!--
+  Cookiies banner
+-->
+<div id="lwps-cookie-banner" class="lwps-cookie-banner" hidden role="dialog" aria-live="polite"
+     aria-label="{% trans 'Cookie consent' %}">
+    <div class="container">
+        <div class="lwps-cookie-inner">
+            <div class="lwps-cookie-text">
+                <strong class="d-block mb-1">{% trans "We value your privacy" %}</strong>
+                <span class="small text-light-muted">
+                    {% blocktrans %}We use only the cookies needed to run this site. With your permission we also use Google Analytics to understand how visitors use the service so we can improve it. You can change your choice at any time.{% endblocktrans %}
+                    <a href="{% url 'public:privacy' %}" class="link-accent">{% trans "Read our privacy policy" %}</a>.
+                </span>
+            </div>
+            <div class="lwps-cookie-actions">
+                <button type="button" class="btn btn-outline-light btn-sm" data-consent="reject">
+                    {% trans "Reject analytics" %}
+                </button>
+                <button type="button" class="btn btn-accent btn-sm" data-consent="accept">
+                    {% trans "Accept all" %}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

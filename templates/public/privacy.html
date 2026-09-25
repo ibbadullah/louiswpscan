@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Privacy policy" %} | Louis WP Scan{% endblock %}
+{% block description %}{% trans "How Louis WP Scan collects, uses and protects data, in line with the EU General Data Protection Regulation." %}{% endblock %}
+
+{% block content %}
+<section class="lwps-page-hero">
+    <div class="container">
+        <span class="badge lwps-badge mb-3"><i class="bi bi-shield-lock me-1"></i>{% trans "Privacy" %}</span>
+        <h1 class="text-white">{% trans "Privacy policy" %}</h1>
+        <p class="text-light-muted mb-0">{% trans "Last updated" %}: 2 {% trans "June" %} 2026</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto lwps-prose lwps-legal">
+
+                <p>{% blocktrans %}Louis WP Scan ("we", "us", or "the service") is a non profit initiative available at https://louiswpscan.org. We respect your privacy and we are committed to protecting your personal data. This policy explains what we collect, why, and the rights you have under the European Union General Data Protection Regulation (GDPR).{% endblocktrans %}</p>
+
+                <h2>1. {% trans "Who is responsible for your data" %}</h2>
+                <p>{% blocktrans %}The data controller for this service is the Louis WP Scan project. If you have any question about this policy or about your data, you can contact us at contact@louiswpscan.org.{% endblocktrans %}</p>
+
+                <h2>2. {% trans "What we collect and why" %}</h2>
+                <p>{% trans "We follow the principle of data minimisation. We only collect what is needed to run the service." %}</p>
+                <ul>
+                    <li>{% blocktrans %}<strong>Scan data.</strong> When you scan a website we store the address you entered, the date and time of the scan, and a short summary of the result, such as the number of issues found and the security grade. We do not store the full content of your website or any login details.{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<strong>Contact data.</strong> If you use the contact form, we store the name, email address, subject and message you provide, so that we can reply to you.{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<strong>Analytics data.</strong> With your consent only, we use Google Analytics to understand how the service is used so we can improve it. This may include anonymised usage data such as pages visited and approximate region.{% endblocktrans %}</li>
+                </ul>
+
+                <h2>3. {% trans "Legal basis for processing" %}</h2>
+                <ul>
+                    <li>{% blocktrans %}<strong>Legitimate interest</strong> for running the scan you requested and keeping basic summary records to operate and improve the service.{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<strong>Consent</strong> for analytics cookies. These are switched off until you accept them, and you can withdraw your consent at any time.{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<strong>Consent and legitimate interest</strong> for replying to messages you send us through the contact form.{% endblocktrans %}</li>
+                </ul>
+
+                <h2>4. {% trans "Cookies and analytics" %}</h2>
+                <p>{% blocktrans %}We use a small number of strictly necessary cookies that are required for the website to work, for example to keep your chosen language and to protect forms against abuse. These do not require consent.{% endblocktrans %}</p>
+                <p>{% blocktrans %}We also use Google Analytics, but only after you click Accept on our cookie banner. Until then, no analytics cookies are set and no analytics scripts are loaded. You can change your decision at any time using the Cookie settings link in the footer.{% endblocktrans %}</p>
+                {% if GOOGLE_ANALYTICS_ID %}
+                <p class="text-muted small">{% trans "Our analytics identifier" %}: <code>{{ GOOGLE_ANALYTICS_ID }}</code></p>
+                {% endif %}
+
+                <h2>5. {% trans "How long we keep your data" %}</h2>
+                <p>{% blocktrans %}Scan summary records are kept only as long as needed to operate the service and may be deleted periodically. Contact messages are kept only as long as needed to handle your request. Analytics data follows the retention period set in Google Analytics.{% endblocktrans %}</p>
+
+                <h2>6. {% trans "Who we share data with" %}</h2>
+                <p>{% blocktrans %}We do not sell your data and we never will. We share data only with the service providers needed to run the site, such as our hosting provider and, where you consented, Google Analytics. These providers act on our instructions.{% endblocktrans %}</p>
+
+                <h2>7. {% trans "International transfers" %}</h2>
+                <p>{% blocktrans %}Some providers, such as Google, may process data outside the European Economic Area. Where this happens, the transfer is covered by appropriate safeguards such as the European Commission standard contractual clauses.{% endblocktrans %}</p>
+
+                <h2>8. {% trans "Your rights" %}</h2>
+                <p>{% trans "Under the GDPR you have the right to:" %}</p>
+                <ul>
+                    <li>{% trans "access the personal data we hold about you" %}</li>
+                    <li>{% trans "ask us to correct data that is wrong" %}</li>
+                    <li>{% trans "ask us to delete your data" %}</li>
+                    <li>{% trans "object to or restrict how we process your data" %}</li>
+                    <li>{% trans "withdraw consent at any time, for example for analytics" %}</li>
+                    <li>{% trans "lodge a complaint with your local data protection authority" %}</li>
+                </ul>
+                <p>{% blocktrans %}To exercise any of these rights, contact us at contact@louiswpscan.org. We will respond within the time limits set by law.{% endblocktrans %}</p>
+
+                <h2>9. {% trans "Scanning other people websites" %}</h2>
+                <p>{% blocktrans %}This service is meant to help website owners check their own sites. Only scan a website that you own or that you have permission to test.{% endblocktrans %}</p>
+
+                <h2>10. {% trans "Changes to this policy" %}</h2>
+                <p>{% blocktrans %}We may update this policy from time to time. The date at the top shows when it was last changed. Significant changes will be made clear on this page.{% endblocktrans %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
